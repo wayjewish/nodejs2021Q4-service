@@ -1,46 +1,65 @@
-const router = require('express').Router();
+const Router = require('koa-router');
 const User = require('./user.model');
 const usersService = require('./user.service');
 const tasksService = require('../tasks/task.service');
 
-router.route('/').get(async (req, res) => {
-  const users = await usersService.getAll();
-  res.status(200).json(users.map(User.toResponse));
+const router = new Router({
+	prefix: '/users'
 });
 
-router.route('/:id').get(async (req, res) => {
-  const {id} = req.params;
+router.get('/', async (ctx) => {
+  const users = await usersService.getAll();
+
+  ctx.status = 200;
+  ctx.body = users.map(User.toResponse);
+});
+
+router.get('/:id', async (ctx) => {
+  const {id} = ctx.params;
   const user = await usersService.getOne(id);
 
-  if (!user) res.status(404).json();
-  res.status(200).json(User.toResponse(user));
+  if (!user) {
+    ctx.status = 404;
+    ctx.body = 'Not found user';
+    return;
+  }
+
+  ctx.status = 200;
+  ctx.body = User.toResponse(user);
 });
 
-router.route('/').post(async (req, res) => {
-  const {body} = req;
+router.post('/', async (ctx) => {
+  const {body} = ctx.request;
   const user = new User(body);
   const newUser = await usersService.create(user);
 
-  res.status(201).json(User.toResponse(newUser));
+  ctx.status = 201;
+  ctx.body = User.toResponse(newUser);
 });
 
-router.route('/:id').put(async (req, res) => {
-  const {id} = req.params;
-  const {body} = req;
+router.put('/:id', async (ctx) => {
+  const {id} = ctx.params;
+  const {body} = ctx.request;
 
   const user = await usersService.update(id, body);
 
-  if (!user) res.status(404).json();
-  res.status(200).json(User.toResponse(user));
+  if (!user) {
+    ctx.status = 404;
+    ctx.body = 'Not found user';
+    return;
+  }
+
+  ctx.status = 200;
+  ctx.body = User.toResponse(user);
 });
 
-router.route('/:id').delete(async (req, res) => {
-  const {id} = req.params;
+router.delete('/:id', async (ctx) => {
+  const {id} = ctx.params;
   
   await usersService.remove(id);
   await tasksService.resetUser(id);
 
-  res.status(204).json();
+  ctx.status = 204;
 });
 
 module.exports = router;

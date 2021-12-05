@@ -1,50 +1,67 @@
-const router = require('express').Router({
-  mergeParams: true,
-});
+const Router = require('koa-router');
 const Task = require('./task.model');
 const tasksService = require('./task.service');
 
-router.route('/').get(async (req, res) => {
-  const tasks = await tasksService.getAll();
-  res.status(200).json(tasks.map(Task.toResponse));
+const router = new Router({
+	prefix: '/boards/:boardId/tasks'
 });
 
-router.route('/:id').get(async (req, res) => {
-  const {id} = req.params;
+router.get('/', async (ctx) => {
+  const tasks = await tasksService.getAll();
+
+  ctx.status = 200;
+  ctx.body = tasks.map(Task.toResponse);
+});
+
+router.get('/:id', async (ctx) => {
+  const {id} = ctx.params;
   const task = await tasksService.getOne(id);
 
-  if (!task) res.status(404).json();
-  res.status(200).json(Task.toResponse(task));
+  if (!task) {
+    ctx.status = 404;
+    ctx.body = 'Not found task';
+    return;
+  }
+
+  ctx.status = 200;
+  ctx.body = Task.toResponse(task);
 });
 
-router.route('/').post(async (req, res) => {
-  const {body} = req;
+router.post('/', async (ctx) => {
+  const {body} = ctx.request;
   const task = new Task({
     ...body,
-    boardId: req.params.boardId,
+    boardId: ctx.params.boardId,
   });
 
   const newTask = await tasksService.create(task);
 
-  res.status(201).json(Task.toResponse(newTask));
+  ctx.status = 201;
+  ctx.body = Task.toResponse(newTask);
 });
 
-router.route('/:id').put(async (req, res) => {
-  const {id} = req.params;
-  const {body} = req;
+router.put('/:id', async (ctx) => {
+  const {id} = ctx.params;
+  const {body} = ctx.request;
 
   const task = await tasksService.update(id, body);
 
-  if (!task) res.status(404).json();
-  res.status(200).json(Task.toResponse(task));
+  if (!task) {
+    ctx.status = 404;
+    ctx.body = 'Not found task';
+    return;
+  }
+
+  ctx.status = 200;
+  ctx.body = Task.toResponse(task);
 });
 
-router.route('/:id').delete(async (req, res) => {
-  const {id} = req.params;
+router.delete('/:id', async (ctx) => {
+  const {id} = ctx.params;
   
   await tasksService.remove(id);
 
-  res.status(204).json();
+  ctx.status = 204;
 });
 
 module.exports = router;

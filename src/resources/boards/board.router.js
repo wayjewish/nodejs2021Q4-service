@@ -1,46 +1,65 @@
-const router = require('express').Router();
+const Router = require('koa-router');
 const Board = require('./board.model');
 const boardsService = require('./board.service');
 const tasksService = require('../tasks/task.service');
 
-router.route('/').get(async (req, res) => {
-  const boards = await boardsService.getAll();
-  res.status(200).json(boards.map(Board.toResponse));
+const router = new Router({
+	prefix: '/boards'
 });
 
-router.route('/:id').get(async (req, res) => {
-  const {id} = req.params;
+router.get('/', async (ctx) => {
+  const boards = await boardsService.getAll();
+
+  ctx.status = 200;
+  ctx.body = boards.map(Board.toResponse);
+});
+
+router.get('/:id', async (ctx) => {
+  const {id} = ctx.params;
   const board = await boardsService.getOne(id);
 
-  if (!board) res.status(404).json();
-  res.status(200).json(Board.toResponse(board));
+  if (!board) {
+    ctx.status = 404;
+    ctx.body = 'Not found board';
+    return;
+  }
+
+  ctx.status = 200;
+  ctx.body = Board.toResponse(board);
 });
 
-router.route('/').post(async (req, res) => {
-  const {body} = req;
+router.post('/', async (ctx) => {
+  const {body} = ctx.request;
   const board = new Board(body);
   const newBoard = await boardsService.create(board);
 
-  res.status(201).json(Board.toResponse(newBoard));
+  ctx.status = 201;
+  ctx.body = Board.toResponse(newBoard);
 });
 
-router.route('/:id').put(async (req, res) => {
-  const {id} = req.params;
-  const {body} = req;
+router.put('/:id', async (ctx) => {
+  const {id} = ctx.params;
+  const {body} = ctx.request;
 
   const board = await boardsService.update(id, body);
 
-  if (!board) res.status(404).json();
-  res.status(200).json(Board.toResponse(board));
+  if (!board) {
+    ctx.status = 404;
+    ctx.body = 'Not found board';
+    return;
+  }
+
+  ctx.status = 200;
+  ctx.body = Board.toResponse(board);
 });
 
-router.route('/:id').delete(async (req, res) => {
-  const {id} = req.params;
+router.delete('/:id', async (ctx) => {
+  const {id} = ctx.params;
   
   await boardsService.remove(id);
   await tasksService.removeInBoards(id);
 
-  res.status(204).json();
+  ctx.status = 204;
 });
 
 module.exports = router;
