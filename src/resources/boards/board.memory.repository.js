@@ -3,13 +3,13 @@ let db = [];
 const getAll = async () => db;
 
 const getOne = async (id) => {
-  const foundUser = db.find((user) => user.id === id);
-  return foundUser;
+  const foundBoard = db.find((board) => board.id === id);
+  return foundBoard;
 };
 
-const create = async (user) => {
-  db.push(user);
-  return user;
+const create = async (board) => {
+  db.push(board);
+  return board;
 };
 
 const update = async (id, props) => {
@@ -19,7 +19,7 @@ const update = async (id, props) => {
 };
 
 const remove = async (id) => {
-  db = db.filter((user) => user.id !== id);
+  db = db.filter((board) => board.id !== id);
 };
 
 module.exports = { getAll, getOne, create, update, remove };

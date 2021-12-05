@@ -1,63 +1,63 @@
 const Router = require('koa-router');
-const User = require('./user.model');
-const usersService = require('./user.service');
+const Board = require('./board.model');
+const boardsService = require('./board.service');
 const tasksService = require('../tasks/task.service');
 
 const router = new Router({
-	prefix: '/users'
+	prefix: '/boards'
 });
 
 router.get('/', async (ctx) => {
-  const users = await usersService.getAll();
+  const boards = await boardsService.getAll();
 
   ctx.status = 200;
-  ctx.body = users.map(User.toResponse);
+  ctx.body = boards.map(Board.toResponse);
 });
 
 router.get('/:id', async (ctx) => {
   const {id} = ctx.params;
-  const user = await usersService.getOne(id);
+  const board = await boardsService.getOne(id);
 
-  if (!user) {
+  if (!board) {
     ctx.status = 404;
-    ctx.body = 'Not found user';
+    ctx.body = 'Not found board';
     return;
   }
 
   ctx.status = 200;
-  ctx.body = User.toResponse(user);
+  ctx.body = Board.toResponse(board);
 });
 
 router.post('/', async (ctx) => {
   const {body} = ctx.request;
-  const user = new User(body);
-  const newUser = await usersService.create(user);
+  const board = new Board(body);
+  const newBoard = await boardsService.create(board);
 
   ctx.status = 201;
-  ctx.body = User.toResponse(newUser);
+  ctx.body = Board.toResponse(newBoard);
 });
 
 router.put('/:id', async (ctx) => {
   const {id} = ctx.params;
   const {body} = ctx.request;
 
-  const user = await usersService.update(id, body);
+  const board = await boardsService.update(id, body);
 
-  if (!user) {
+  if (!board) {
     ctx.status = 404;
-    ctx.body = 'Not found user';
+    ctx.body = 'Not found board';
     return;
   }
 
   ctx.status = 200;
-  ctx.body = User.toResponse(user);
+  ctx.body = Board.toResponse(board);
 });
 
 router.delete('/:id', async (ctx) => {
   const {id} = ctx.params;
   
-  await usersService.remove(id);
-  await tasksService.resetUser(id);
+  await boardsService.remove(id);
+  await tasksService.removeInBoards(id);
 
   ctx.status = 204;
 });
