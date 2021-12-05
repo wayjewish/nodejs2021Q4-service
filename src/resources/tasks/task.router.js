@@ -5,19 +5,25 @@ const Task = require('./task.model');
 const tasksService = require('./task.service');
 
 router.route('/').get(async (req, res) => {
-  const tasks = await tasksService.getAll(req.params.boardId);
+  const tasks = await tasksService.getAll();
   res.status(200).json(tasks.map(Task.toResponse));
 });
 
 router.route('/:id').get(async (req, res) => {
   const {id} = req.params;
   const task = await tasksService.getOne(id);
+
+  if (!task) res.status(404).json();
   res.status(200).json(Task.toResponse(task));
 });
 
 router.route('/').post(async (req, res) => {
   const {body} = req;
-  const task = new Task(body);
+  const task = new Task({
+    ...body,
+    boardId: req.params.boardId,
+  });
+
   const newTask = await tasksService.create(task);
 
   res.status(201).json(Task.toResponse(newTask));
@@ -29,6 +35,7 @@ router.route('/:id').put(async (req, res) => {
 
   const task = await tasksService.update(id, body);
 
+  if (!task) res.status(404).json();
   res.status(200).json(Task.toResponse(task));
 });
 

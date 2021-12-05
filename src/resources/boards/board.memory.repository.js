@@ -20,7 +20,6 @@ const update = async (id, props) => {
 
 const remove = async (id) => {
   db = db.filter((board) => board.id !== id);
-  
 };
 
 module.exports = { getAll, getOne, create, update, remove };

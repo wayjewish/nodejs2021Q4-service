@@ -20,7 +20,19 @@ const update = async (id, props) => {
 
 const remove = async (id) => {
   db = db.filter((task) => task.id !== id);
-  
 };
 
-module.exports = { getAll, getOne, create, update, remove };
+const removeInBoards = async (boardId) => {
+  db = db.filter((task) => task.boardId !== boardId);
+};
+
+const resetUser = async (userId) => {
+  db = db.map((task) =>
+    (task.userId === userId)
+    ? { ...task, userId: null }
+    : { ...task }
+  );
+};
+
+
+module.exports = { getAll, getOne, create, update, remove, removeInBoards, resetUser };
