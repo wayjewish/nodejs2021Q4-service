@@ -4,7 +4,7 @@ const getAll = () => boardsRepo.getAll();
 
 const getOne = (id) => boardsRepo.getOne(id);
 
-const create = (user) => boardsRepo.create(user);
+const create = (board) => boardsRepo.create(board);
 
 const update = (id, props) => boardsRepo.update(id, props);
 

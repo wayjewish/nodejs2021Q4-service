@@ -9,25 +9,25 @@ router.route('/').get(async (req, res) => {
 
 router.route('/:id').get(async (req, res) => {
   const {id} = req.params;
-  const user = await boardsService.getOne(id);
-  res.status(200).json(Board.toResponse(user));
+  const board = await boardsService.getOne(id);
+  res.status(200).json(Board.toResponse(board));
 });
 
 router.route('/').post(async (req, res) => {
   const {body} = req;
-  const user = new Board(body);
-  const newUser = await boardsService.create(user);
+  const board = new Board(body);
+  const newBoard = await boardsService.create(board);
 
-  res.status(201).json(Board.toResponse(newUser));
+  res.status(201).json(Board.toResponse(newBoard));
 });
 
 router.route('/:id').put(async (req, res) => {
   const {id} = req.params;
   const {body} = req;
 
-  const user = await boardsService.update(id, body);
+  const board = await boardsService.update(id, body);
 
-  res.status(200).json(Board.toResponse(user));
+  res.status(200).json(Board.toResponse(board));
 });
 
 router.route('/:id').delete(async (req, res) => {
