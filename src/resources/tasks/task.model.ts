@@ -28,6 +28,11 @@ class Task implements ITask {
     this.columnId = columnId;
   }
 
+  /**
+   * return task to response
+   * @param task - object with task parameters
+   * @returns task
+   */
   static toResponse(task: ITask) {
     return task;
   }

@@ -16,6 +16,11 @@ class Board implements IBoard {
     this.columns = columns;
   }
 
+  /**
+   * return board to response
+   * @param board - object with board parameters
+   * @returns board
+   */
   static toResponse(board: IBoard): IBoard {
     return board;
   }
