@@ -16,12 +16,21 @@
     }
   },
   "settings": {
-    "noInlineConfig": true
+    "noInlineConfig": true,
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    },
+    "node": {
+      "tryExtensions": [".js", ".ts"]
+    },
+    "typescript": {}
   },
   "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
   "extends": [
-    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
     "plugin:node/recommended",
     "airbnb-base",
     "prettier"
@@ -34,6 +43,6 @@
     "import/prefer-default-export": "off",
     "tsdoc/syntax": "error",
     "@typescript-eslint/no-explicit-any": ["error"],
-    "@typescript-eslint/no-var-requires": "off"
+    "lines-between-class-members": "off"
   }
 }

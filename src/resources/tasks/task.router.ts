@@ -1,23 +1,25 @@
-const router = require('express').Router({
+import express, { Request, Response } from 'express';
+import Task from './task.model';
+import tasksService from './task.service';
+
+const router = express.Router({
   mergeParams: true,
 });
-const Task = require('./task.model');
-const tasksService = require('./task.service');
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async (req: Request, res: Response) => {
   const tasks = await tasksService.getAll();
   res.status(200).json(tasks.map(Task.toResponse));
 });
 
-router.route('/:id').get(async (req, res) => {
+router.route('/:id').get(async (req: Request, res: Response) => {
   const {id} = req.params;
   const task = await tasksService.getOne(id);
 
   if (!task) res.status(404).json();
-  res.status(200).json(Task.toResponse(task));
+  if (task) res.status(200).json(Task.toResponse(task));
 });
 
-router.route('/').post(async (req, res) => {
+router.route('/').post(async (req: Request, res: Response) => {
   const {body} = req;
   const task = new Task({
     ...body,
@@ -29,7 +31,7 @@ router.route('/').post(async (req, res) => {
   res.status(201).json(Task.toResponse(newTask));
 });
 
-router.route('/:id').put(async (req, res) => {
+router.route('/:id').put(async (req: Request, res: Response) => {
   const {id} = req.params;
   const {body} = req;
 
@@ -39,7 +41,7 @@ router.route('/:id').put(async (req, res) => {
   res.status(200).json(Task.toResponse(task));
 });
 
-router.route('/:id').delete(async (req, res) => {
+router.route('/:id').delete(async (req: Request, res: Response) => {
   const {id} = req.params;
   
   await tasksService.remove(id);
@@ -47,4 +49,4 @@ router.route('/:id').delete(async (req, res) => {
   res.status(204).json();
 });
 
-module.exports = router;
+export default router;

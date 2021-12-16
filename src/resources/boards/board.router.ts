@@ -1,22 +1,24 @@
-const router = require('express').Router();
-const Board = require('./board.model');
-const boardsService = require('./board.service');
-const tasksService = require('../tasks/task.service');
+import express, { Request, Response } from 'express';
+import Board from './board.model';
+import boardsService from './board.service';
+import tasksService from '../tasks/task.service';
 
-router.route('/').get(async (req, res) => {
+const router = express.Router();
+
+router.route('/').get(async (req: Request, res: Response) => {
   const boards = await boardsService.getAll();
   res.status(200).json(boards.map(Board.toResponse));
 });
 
-router.route('/:id').get(async (req, res) => {
+router.route('/:id').get(async (req: Request, res: Response) => {
   const {id} = req.params;
   const board = await boardsService.getOne(id);
 
   if (!board) res.status(404).json();
-  res.status(200).json(Board.toResponse(board));
+  if (board) res.status(200).json(Board.toResponse(board));
 });
 
-router.route('/').post(async (req, res) => {
+router.route('/').post(async (req: Request, res: Response) => {
   const {body} = req;
   const board = new Board(body);
   const newBoard = await boardsService.create(board);
@@ -24,7 +26,7 @@ router.route('/').post(async (req, res) => {
   res.status(201).json(Board.toResponse(newBoard));
 });
 
-router.route('/:id').put(async (req, res) => {
+router.route('/:id').put(async (req: Request, res: Response) => {
   const {id} = req.params;
   const {body} = req;
 
@@ -34,7 +36,7 @@ router.route('/:id').put(async (req, res) => {
   res.status(200).json(Board.toResponse(board));
 });
 
-router.route('/:id').delete(async (req, res) => {
+router.route('/:id').delete(async (req: Request, res: Response) => {
   const {id} = req.params;
   
   await boardsService.remove(id);
@@ -43,4 +45,4 @@ router.route('/:id').delete(async (req, res) => {
   res.status(204).json();
 });
 
-module.exports = router;
+export default router;
