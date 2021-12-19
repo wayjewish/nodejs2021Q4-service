@@ -44,7 +44,7 @@ const update = async (id: string, props: ITask): Promise<ITask> => {
  * remove task
  * @param id - id task
  */
-const remove = async (id: string) => {
+const remove = async (id: string): Promise<void> => {
   db = db.filter((task) => task.id !== id);
 };
 
@@ -52,7 +52,7 @@ const remove = async (id: string) => {
  * remove tasks in a remote board
  * @param boardId - id board
  */
-const removeInBoards = async (boardId: string) => {
+const removeInBoards = async (boardId: string): Promise<void> => {
   db = db.filter((task) => task.boardId !== boardId);
 };
 
@@ -60,7 +60,7 @@ const removeInBoards = async (boardId: string) => {
  * reset userId for tasks when deleting a user
  * @param userId - id user
  */
-const resetUser = async (userId: string) => {
+const resetUser = async (userId: string): Promise<void> => {
   db = db.map((task) =>
     (task.userId === userId)
     ? { ...task, userId: null }

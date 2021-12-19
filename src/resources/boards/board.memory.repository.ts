@@ -44,7 +44,7 @@ const update = async (id: string, props: IBoard): Promise<IBoard> => {
  * remove board
  * @param id - id board
  */
-const remove = async (id: string) => {
+const remove = async (id: string): Promise<void> => {
   db = db.filter((board) => board.id !== id);
 };
 

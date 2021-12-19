@@ -44,7 +44,7 @@ const update = async (id: string, props: IUser): Promise<IUser> => {
  * remove user
  * @param id - id user
  */
-const remove = async (id: string) => {
+const remove = async (id: string): Promise<void> => {
   db = db.filter((user) => user.id !== id);
 };
 
