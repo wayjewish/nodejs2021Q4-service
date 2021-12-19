@@ -6,14 +6,14 @@ let db: ITask[] = [];
  * get all tasks
  * @returns all tasks
  */
-const getAll = async () => db;
+const getAll = async (): Promise<ITask[]> => db;
 
 /**
  * get task
  * @param id - id task
  * @returns task
  */
-const getOne = async (id: string) => {
+const getOne = async (id: string): Promise<ITask | undefined> => {
   const foundTask = db.find((task) => task.id === id);
   return foundTask;
 };
@@ -23,7 +23,7 @@ const getOne = async (id: string) => {
  * @param task - object with task parameters
  * @returns created task
  */
-const create = async (task: ITask) => {
+const create = async (task: ITask): Promise<ITask> => {
   db.push(task);
   return task;
 };
@@ -34,7 +34,7 @@ const create = async (task: ITask) => {
  * @param props - object with new task parameters
  * @returns updated task
  */
-const update = async (id: string, props: ITask) => {
+const update = async (id: string, props: ITask): Promise<ITask> => {
   const index = db.findIndex((p) => p.id === id);
   db[index] = { ...props };
   return db[index];

@@ -6,14 +6,14 @@ let db: IBoard[] = [];
  * get all boards
  * @returns all boards
  */
-const getAll = async () => db;
+const getAll = async (): Promise<IBoard[]> => db;
 
 /**
  * get board
  * @param id - id board
  * @returns board
  */
-const getOne = async (id: string) => {
+const getOne = async (id: string): Promise<IBoard | undefined> => {
   const foundBoard = db.find((board) => board.id === id);
   return foundBoard;
 };
@@ -23,7 +23,7 @@ const getOne = async (id: string) => {
  * @param board - object with board parameters
  * @returns created board
  */
-const create = async (board: IBoard) => {
+const create = async (board: IBoard): Promise<IBoard> => {
   db.push({ ...board });
   return board;
 };
@@ -34,7 +34,7 @@ const create = async (board: IBoard) => {
  * @param props - object with new board parameters
  * @returns updated board
  */
-const update = async (id: string, props: IBoard) => {
+const update = async (id: string, props: IBoard): Promise<IBoard> => {
   const index = db.findIndex((p) => p.id === id);
   db[index] = { ...props};
   return db[index];

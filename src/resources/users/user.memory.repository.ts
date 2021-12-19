@@ -6,14 +6,14 @@ let db: IUser[] = [];
  * get all users
  * @returns all users
  */
-const getAll = async () => db;
+const getAll = async (): Promise<IUser[]> => db;
 
 /**
  * get user
  * @param id - id user
  * @returns user
  */
-const getOne = async (id: string) => {
+const getOne = async (id: string): Promise<IUser | undefined> => {
   const foundUser = db.find((user) => user.id === id);
   return foundUser;
 };
@@ -23,7 +23,7 @@ const getOne = async (id: string) => {
  * @param user - object with user parameters
  * @returns created user
  */
-const create = async (user: IUser) => {
+const create = async (user: IUser): Promise<IUser> => {
   db.push(user);
   return user;
 };
@@ -34,7 +34,7 @@ const create = async (user: IUser) => {
  * @param props - object with new user parameters
  * @returns updated user
  */
-const update = async (id: string, props: IUser) => {
+const update = async (id: string, props: IUser): Promise<IUser> => {
   const index = db.findIndex((p) => p.id === id);
   db[index] = { ...props };
   return db[index];
