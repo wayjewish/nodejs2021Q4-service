@@ -3,7 +3,7 @@ import swaggerUI from 'swagger-ui-express';
 import path from 'path';
 import YAML from 'yamljs';
 
-// import errorHandler from './logger/handlers/errorHandler';
+import errorHandler from './logger/handlers/errorHandler';
 import loggerHandler from './logger/handlers/requestHandler';
 
 import userRouter  from './resources/users/user.router';
@@ -31,4 +31,10 @@ app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);
 
+app.use(errorHandler);
+
+// throw Error('Oops!');
+// Promise.reject(Error('Oops! Promise!'));
+
+// eslint-disable-next-line no-unreachable
 export default app;

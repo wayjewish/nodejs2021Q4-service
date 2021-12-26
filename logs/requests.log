@@ -1,12 +1,40 @@
-2021-12-26 18:24:56: GET /users
+2021-12-26 21:35:33: GET /users
 Query: 
 Body: 
 
-2021-12-26 18:25:01: POST /users
-Query: 
-Body: {"name":"name","login":"login","password":"password"}
-
-2021-12-26 18:25:17: POST /users?test=test&a=b
+2021-12-26 21:35:35: POST /users?test=test&a=b
 Query: {"test":"test","a":"b"}
 Body: {"name":"name","login":"login","password":"password"}
+
+2021-12-26 21:35:37: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
+
+2021-12-26 21:37:11: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
+
+2021-12-26 21:39:29: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
+
+2021-12-26 21:39:54: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
+
+2021-12-26 21:39:55: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
+
+2021-12-26 21:39:56: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
+
+2021-12-26 21:39:56: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
+
+2021-12-26 21:40:33: GET /users/a91f01b4-e9e9-4016-8c01-c91cb695e58
+Query: 
+Body: 
 

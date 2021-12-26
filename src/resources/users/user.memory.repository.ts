@@ -1,4 +1,5 @@
 import { IUser } from './user.types';
+import CustomError from '../../common/customError';
 
 let db: IUser[] = [];
 
@@ -15,6 +16,9 @@ const getAll = async (): Promise<IUser[]> => db;
  */
 const getOne = async (id: string): Promise<IUser | undefined> => {
   const foundUser = db.find((user) => user.id === id);
+
+  if (!foundUser) throw new CustomError(404, `The user with id ${id} was not found`);
+
   return foundUser;
 };
 
@@ -36,6 +40,9 @@ const create = async (user: IUser): Promise<IUser> => {
  */
 const update = async (id: string, props: IUser): Promise<IUser> => {
   const index = db.findIndex((p) => p.id === id);
+  
+  if (!db[index]) throw new CustomError(404, `Could not update user with id ${id}`);
+
   db[index] = { ...props };
   return db[index];
 };
