@@ -9,9 +9,6 @@ const router = express.Router();
 router.route('/').get(
   routerCatch(
     async (req: Request, res: Response) => {
-      throw new Error('test');
-
-      // eslint-disable-next-line no-unreachable
       const users = await usersService.getAll();
 
       res.status(200).json(users.map(User.toResponse));

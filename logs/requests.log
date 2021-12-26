@@ -46,3 +46,539 @@ Body:
 Query: 
 Body: 
 
+2021-12-26 22:10:03: GET /users
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:03: GET /users/1ee606e5-37a4-4a77-9e60-c8fa8910ed9e
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /users/1ee606e5-37a4-4a77-9e60-c8fa8910ed9e
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:03: DELETE /users/f1bccefd-bfc3-4dc3-abe3-af2cbafbffbf
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:03: PUT /users/80547f89-c9c1-433e-ac32-90f2d96a0e96
+Query: 
+Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"80547f89-c9c1-433e-ac32-90f2d96a0e96"}
+
+2021-12-26 22:10:03: GET /users/80547f89-c9c1-433e-ac32-90f2d96a0e96
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /users/80547f89-c9c1-433e-ac32-90f2d96a0e96
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:03: DELETE /users/07279266-c30d-4876-b030-5451ce351f21
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:03: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: POST /boards/04debff1-30db-4fa6-981d-0927b0e2aabd/tasks
+Query: 
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"05113e1f-1a18-4037-b2eb-2787f64fa24a","boardId":"04debff1-30db-4fa6-981d-0927b0e2aabd"}
+
+2021-12-26 22:10:03: POST /boards/04debff1-30db-4fa6-981d-0927b0e2aabd/tasks
+Query: 
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"05113e1f-1a18-4037-b2eb-2787f64fa24a","boardId":"04debff1-30db-4fa6-981d-0927b0e2aabd"}
+
+2021-12-26 22:10:03: DELETE /users/05113e1f-1a18-4037-b2eb-2787f64fa24a
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/04debff1-30db-4fa6-981d-0927b0e2aabd/tasks/81fc9ac9-43a7-4a68-82c8-4104b39c74f6
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/04debff1-30db-4fa6-981d-0927b0e2aabd/tasks/b5bf8453-7ad3-4f69-94b9-c050f2dac69e
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/04debff1-30db-4fa6-981d-0927b0e2aabd/tasks/81fc9ac9-43a7-4a68-82c8-4104b39c74f6
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/04debff1-30db-4fa6-981d-0927b0e2aabd/tasks/b5bf8453-7ad3-4f69-94b9-c050f2dac69e
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/04debff1-30db-4fa6-981d-0927b0e2aabd
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: GET /boards
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/f2f2bd16-876b-4dc9-81aa-cf2e906571be
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: DELETE /boards/775e4451-a8df-4f93-8b22-2b4af07398c0
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: PUT /boards/a9b30bb1-51cb-4452-a433-e32cb51c14bc
+Query: 
+Body: {"id":"a9b30bb1-51cb-4452-a433-e32cb51c14bc","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: GET /boards/a9b30bb1-51cb-4452-a433-e32cb51c14bc
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/a9b30bb1-51cb-4452-a433-e32cb51c14bc
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: DELETE /boards/fb625707-4b4b-40ab-8a5b-6c52ecf70ee0
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/fb625707-4b4b-40ab-8a5b-6c52ecf70ee0
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: POST /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks
+Query: 
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"bfcc1cc8-e392-404c-912c-34a947045674","userId":null,"columnId":null}
+
+2021-12-26 22:10:03: POST /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks
+Query: 
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"bfcc1cc8-e392-404c-912c-34a947045674","userId":null,"columnId":null}
+
+2021-12-26 22:10:03: POST /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks
+Query: 
+Body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"bfcc1cc8-e392-404c-912c-34a947045674","userId":null,"columnId":null}
+
+2021-12-26 22:10:03: POST /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks
+Query: 
+Body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"bfcc1cc8-e392-404c-912c-34a947045674","userId":null,"columnId":null}
+
+2021-12-26 22:10:03: POST /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks
+Query: 
+Body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"bfcc1cc8-e392-404c-912c-34a947045674","userId":null,"columnId":null}
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/d1441089-efc0-484c-8100-a9463ceb5839
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/76b0d798-a862-49d7-bce2-424966ceb1af
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/36561dbb-fb03-4b9f-990d-c27bfdf0753d
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/05345852-80e5-493d-8747-0e5ed66003d3
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/e7a476d9-efa8-4d89-b72d-6ddbe9cc1641
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/bfcc1cc8-e392-404c-912c-34a947045674
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/d1441089-efc0-484c-8100-a9463ceb5839
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/76b0d798-a862-49d7-bce2-424966ceb1af
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/36561dbb-fb03-4b9f-990d-c27bfdf0753d
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/05345852-80e5-493d-8747-0e5ed66003d3
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/bfcc1cc8-e392-404c-912c-34a947045674/tasks/e7a476d9-efa8-4d89-b72d-6ddbe9cc1641
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/f2f2bd16-876b-4dc9-81aa-cf2e906571be
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:03: POST /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2021-12-26 22:10:03: GET /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks/05f1e82f-9add-4fb2-a5fe-826d9c6ad3ad
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2021-12-26 22:10:03: DELETE /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks/1c34df91-82af-4d1f-9b2a-9884ee49c7ed
+Query: 
+Body: 
+
+2021-12-26 22:10:03: POST /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2021-12-26 22:10:03: PUT /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks/684c7257-4331-49f8-b4b9-7fb4f1554b7a
+Query: 
+Body: {"id":"684c7257-4331-49f8-b4b9-7fb4f1554b7a","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"18015432-78f6-4c54-bc23-48545a861cc4","columnId":null}
+
+2021-12-26 22:10:03: GET /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks/684c7257-4331-49f8-b4b9-7fb4f1554b7a
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks/05f1e82f-9add-4fb2-a5fe-826d9c6ad3ad
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks/05f1e82f-9add-4fb2-a5fe-826d9c6ad3ad
+Query: 
+Body: 
+
+2021-12-26 22:10:03: GET /boards/18015432-78f6-4c54-bc23-48545a861cc4/tasks/05f1e82f-9add-4fb2-a5fe-826d9c6ad3ad
+Query: 
+Body: 
+
+2021-12-26 22:10:03: DELETE /boards/18015432-78f6-4c54-bc23-48545a861cc4
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /users
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:42: GET /users/530ab941-4ae6-4748-b5f9-9c717acb7e3f
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /users/530ab941-4ae6-4748-b5f9-9c717acb7e3f
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:42: DELETE /users/6fdc69bd-c8da-40d3-80da-9c6f593f90b0
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:42: PUT /users/e1e80ece-cd16-45d6-9ddc-fc82a79ac875
+Query: 
+Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"e1e80ece-cd16-45d6-9ddc-fc82a79ac875"}
+
+2021-12-26 22:10:42: GET /users/e1e80ece-cd16-45d6-9ddc-fc82a79ac875
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /users/e1e80ece-cd16-45d6-9ddc-fc82a79ac875
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:42: DELETE /users/5ee79c79-be97-47c3-a3ca-f17122b52ded
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /users
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2021-12-26 22:10:42: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: POST /boards/9fdd1798-93c0-4cce-8153-6a483c893cfa/tasks
+Query: 
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"44f67e52-479c-4165-abab-05e330313120","boardId":"9fdd1798-93c0-4cce-8153-6a483c893cfa"}
+
+2021-12-26 22:10:42: POST /boards/9fdd1798-93c0-4cce-8153-6a483c893cfa/tasks
+Query: 
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"44f67e52-479c-4165-abab-05e330313120","boardId":"9fdd1798-93c0-4cce-8153-6a483c893cfa"}
+
+2021-12-26 22:10:42: DELETE /users/44f67e52-479c-4165-abab-05e330313120
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/9fdd1798-93c0-4cce-8153-6a483c893cfa/tasks/6b9c1387-0393-4b0c-876d-8719e3bec6d5
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/9fdd1798-93c0-4cce-8153-6a483c893cfa/tasks/087ed805-7b8c-40b9-a8ec-5dd0edfe779c
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/9fdd1798-93c0-4cce-8153-6a483c893cfa/tasks/6b9c1387-0393-4b0c-876d-8719e3bec6d5
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/9fdd1798-93c0-4cce-8153-6a483c893cfa/tasks/087ed805-7b8c-40b9-a8ec-5dd0edfe779c
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/9fdd1798-93c0-4cce-8153-6a483c893cfa
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: GET /boards
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/8f0b6bb8-eb61-44d6-8cac-2c81feacf1d4
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: DELETE /boards/95775683-0538-4a19-a0a1-f808e511b7ad
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: PUT /boards/9b70030b-904b-4e7e-a6e7-9f070d0a5085
+Query: 
+Body: {"id":"9b70030b-904b-4e7e-a6e7-9f070d0a5085","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: GET /boards/9b70030b-904b-4e7e-a6e7-9f070d0a5085
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/9b70030b-904b-4e7e-a6e7-9f070d0a5085
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: DELETE /boards/b5c55337-c14b-4b13-8059-d947898876d5
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/b5c55337-c14b-4b13-8059-d947898876d5
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: POST /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks
+Query: 
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"bdf2c773-5c58-4ba5-b69a-c069a477a391","userId":null,"columnId":null}
+
+2021-12-26 22:10:42: POST /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks
+Query: 
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"bdf2c773-5c58-4ba5-b69a-c069a477a391","userId":null,"columnId":null}
+
+2021-12-26 22:10:42: POST /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks
+Query: 
+Body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"bdf2c773-5c58-4ba5-b69a-c069a477a391","userId":null,"columnId":null}
+
+2021-12-26 22:10:42: POST /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks
+Query: 
+Body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"bdf2c773-5c58-4ba5-b69a-c069a477a391","userId":null,"columnId":null}
+
+2021-12-26 22:10:42: POST /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks
+Query: 
+Body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"bdf2c773-5c58-4ba5-b69a-c069a477a391","userId":null,"columnId":null}
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/7b508a57-66e9-40cf-9e39-545020952cb8
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/2a0bf4a1-f4bb-4132-8ad7-151f4721bf1f
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/7f788d55-dc80-44da-81f1-dfa3bdeeda52
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/0a6ef0cf-01cd-4769-8a5b-8dc225391dd9
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/5e13674f-95ca-4b9d-b421-a705ab362ca3
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/7b508a57-66e9-40cf-9e39-545020952cb8
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/2a0bf4a1-f4bb-4132-8ad7-151f4721bf1f
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/7f788d55-dc80-44da-81f1-dfa3bdeeda52
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/0a6ef0cf-01cd-4769-8a5b-8dc225391dd9
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/bdf2c773-5c58-4ba5-b69a-c069a477a391/tasks/5e13674f-95ca-4b9d-b421-a705ab362ca3
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/8f0b6bb8-eb61-44d6-8cac-2c81feacf1d4
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2021-12-26 22:10:42: POST /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2021-12-26 22:10:42: GET /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks/96246650-f132-4662-bb88-aeca431b6eec
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2021-12-26 22:10:42: DELETE /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks/07aa01d1-f50c-426e-967f-9cc7214564f4
+Query: 
+Body: 
+
+2021-12-26 22:10:42: POST /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2021-12-26 22:10:42: PUT /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks/2857e223-f7ec-4a47-924b-339fa0634c0e
+Query: 
+Body: {"id":"2857e223-f7ec-4a47-924b-339fa0634c0e","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"0a4f3589-c1d4-4a4f-94ed-1578d0041f60","columnId":null}
+
+2021-12-26 22:10:42: GET /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks/2857e223-f7ec-4a47-924b-339fa0634c0e
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks/96246650-f132-4662-bb88-aeca431b6eec
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks/96246650-f132-4662-bb88-aeca431b6eec
+Query: 
+Body: 
+
+2021-12-26 22:10:42: GET /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60/tasks/96246650-f132-4662-bb88-aeca431b6eec
+Query: 
+Body: 
+
+2021-12-26 22:10:42: DELETE /boards/0a4f3589-c1d4-4a4f-94ed-1578d0041f60
+Query: 
+Body: 
+
