@@ -1,12 +1,14 @@
 import { ErrorRequestHandler } from 'express';
-import { errorLogger } from '../logger';
+import { logger } from '../logger';
 
 // eslint-disable-next-line no-unused-vars
 const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
     const { name, message, statusCode, stack } = err;
     const log = `${name} ${statusCode}: ${message}\n${stack}`;
 
-    errorLogger.error(log);
+    console.log(res);
+
+    logger.error(log);
 
     if (statusCode) {
         res.status(statusCode).send({ message });

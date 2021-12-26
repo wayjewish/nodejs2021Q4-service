@@ -17,8 +17,6 @@ app.use(express.json());
 
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-app.use(loggerHandler);
-
 app.use('/', (req: Request, res: Response, next: NextFunction) => {
   if (req.originalUrl === '/') {
     res.send('Service is running!');
@@ -31,10 +29,11 @@ app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);
 
+app.use(loggerHandler);
+
 app.use(errorHandler);
 
 // throw Error('Oops!');
 // Promise.reject(Error('Oops! Promise!'));
 
-// eslint-disable-next-line no-unreachable
 export default app;

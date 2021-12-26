@@ -32,7 +32,22 @@ const errorLogger = createLogger({
     ],
 });
 
+const logger = createLogger({
+    level: 'info',
+    format: format.combine(
+        format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss'
+        }),
+        format.printf(info => `${info.timestamp}: ${info.message}`)
+    ),
+    transports: [
+        new transports.File({ filename: filenameRequest, level: 'info' }),
+        new transports.File({ filename: filenameError, level: 'error', handleExceptions: true, handleRejections: true }),
+    ],
+});
+
 export {
+    logger,
     requestLogger,
     errorLogger, 
 };
