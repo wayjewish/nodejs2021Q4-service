@@ -6,8 +6,6 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
     const { name, message, statusCode, stack } = err;
     const log = `${name} ${statusCode}: ${message}\n${stack}`;
 
-    console.log(res);
-
     logger.error(log);
 
     if (statusCode) {
