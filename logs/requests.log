@@ -38,3 +38,11 @@ Body:
 Query: 
 Body: 
 
+2021-12-26 22:01:51: GET /users
+Query: 
+Body: 
+
+2021-12-26 22:07:49: GET /users
+Query: 
+Body: 
+

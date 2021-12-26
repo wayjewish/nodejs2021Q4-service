@@ -106,3 +106,27 @@ Error: Oops!
     at Module.require (node:internal/modules/cjs/loader:1005:19)
     at require (node:internal/modules/cjs/helpers:102:18)
     at Object.<anonymous> (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\server.ts:2:1)
+2021-12-26 22:01:51: Error undefined: test
+Error: test
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:12:13
+    at Generator.next (<anonymous>)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:4:12)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:11:43
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\utils\routerCatch.ts:5:5
+    at Layer.handle [as handle_request] (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\route.js:112:3)
+2021-12-26 22:07:49: Error undefined: test
+Error: test
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:12:13
+    at Generator.next (<anonymous>)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:4:12)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\users\user.router.ts:11:43
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\utils\routerCatch.ts:5:5
+    at Layer.handle [as handle_request] (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\route.js:112:3)
