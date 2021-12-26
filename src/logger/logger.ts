@@ -2,12 +2,13 @@
 
 import * as path from 'path';
 import { createLogger, format, transports } from 'winston';
+import CONFIG from '../common/config';
 
 const filenameRequest = path.resolve(path.join('logs', 'requests.log'));
 const filenameError = path.resolve(path.join('logs', 'errors.log'));
 
 const logger = createLogger({
-    level: 'info',
+    level: CONFIG.LOG_LEVEL ? CONFIG.LOG_LEVEL : 'info',
     format: format.combine(
         format.timestamp({
             format: 'YYYY-MM-DD HH:mm:ss'
