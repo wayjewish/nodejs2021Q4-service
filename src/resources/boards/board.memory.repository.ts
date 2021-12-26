@@ -1,4 +1,5 @@
 import { IBoard } from './board.types';
+import CustomError from '../../common/customError';
 
 let db: IBoard[] = [];
 
@@ -15,6 +16,9 @@ const getAll = async (): Promise<IBoard[]> => db;
  */
 const getOne = async (id: string): Promise<IBoard | undefined> => {
   const foundBoard = db.find((board) => board.id === id);
+
+  if (!foundBoard) throw new CustomError(404, `The board with id ${id} was not found`);
+
   return foundBoard;
 };
 
@@ -36,6 +40,9 @@ const create = async (board: IBoard): Promise<IBoard> => {
  */
 const update = async (id: string, props: IBoard): Promise<IBoard> => {
   const index = db.findIndex((p) => p.id === id);
+
+  if (!db[index]) throw new CustomError(404, `Could not update board with id ${id}`);
+
   db[index] = { ...props};
   return db[index];
 };

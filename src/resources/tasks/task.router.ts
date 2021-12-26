@@ -1,52 +1,73 @@
 import express, { Request, Response } from 'express';
 import Task from './task.model';
 import tasksService from './task.service';
+import routerCatch from '../../utils/routerCatch';
 
 const router = express.Router({
   mergeParams: true,
 });
 
-router.route('/').get(async (req: Request, res: Response) => {
-  const tasks = await tasksService.getAll();
-  res.status(200).json(tasks.map(Task.toResponse));
-});
+router.route('/').get(
+  routerCatch(
+    async (req: Request, res: Response) => {
+      const tasks = await tasksService.getAll();
 
-router.route('/:id').get(async (req: Request, res: Response) => {
-  const {id} = req.params;
-  const task = await tasksService.getOne(id);
+      res.status(200).json(tasks.map(Task.toResponse));
+    }
+  )
+);
 
-  if (!task) res.status(404).json();
-  if (task) res.status(200).json(Task.toResponse(task));
-});
+router.route('/:id').get(
+  routerCatch(
+    async (req: Request, res: Response) => {
+      const {id} = req.params;
 
-router.route('/').post(async (req: Request, res: Response) => {
-  const {body} = req;
-  const task = new Task({
-    ...body,
-    boardId: req.params.boardId,
-  });
+      const task = await tasksService.getOne(id);
+    
+      if (task) res.status(200).json(Task.toResponse(task));
+    }
+  )
+);
 
-  const newTask = await tasksService.create(task);
+router.route('/').post(
+  routerCatch(
+    async (req: Request, res: Response) => {
+      const {body} = req;
+      const task = new Task({
+        ...body,
+        boardId: req.params.boardId,
+      });
 
-  res.status(201).json(Task.toResponse(newTask));
-});
+      const newTask = await tasksService.create(task);
 
-router.route('/:id').put(async (req: Request, res: Response) => {
-  const {id} = req.params;
-  const {body} = req;
+      res.status(201).json(Task.toResponse(newTask));
+    }
+  )
+);
 
-  const task = await tasksService.update(id, body);
+router.route('/:id').put(
+  routerCatch(
+    async (req: Request, res: Response) => {
+      const {id} = req.params;
+      const {body} = req;
+    
+      const task = await tasksService.update(id, body);
+    
+      res.status(200).json(Task.toResponse(task));
+    }
+  )
+);
 
-  if (!task) res.status(404).json();
-  res.status(200).json(Task.toResponse(task));
-});
-
-router.route('/:id').delete(async (req: Request, res: Response) => {
-  const {id} = req.params;
-  
-  await tasksService.remove(id);
-
-  res.status(204).json();
-});
+router.route('/:id').delete(
+  routerCatch(
+    async (req: Request, res: Response) => {
+      const {id} = req.params;
+      
+      await tasksService.remove(id);
+    
+      res.status(204).json();
+    }
+  )
+);
 
 export default router;

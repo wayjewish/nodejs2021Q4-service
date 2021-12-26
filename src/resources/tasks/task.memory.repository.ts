@@ -1,4 +1,5 @@
 import { ITask } from './task.types';
+import CustomError from '../../common/customError';
 
 let db: ITask[] = [];
 
@@ -15,6 +16,9 @@ const getAll = async (): Promise<ITask[]> => db;
  */
 const getOne = async (id: string): Promise<ITask | undefined> => {
   const foundTask = db.find((task) => task.id === id);
+
+  if (!foundTask) throw new CustomError(404, `The task with id ${id} was not found`);
+
   return foundTask;
 };
 
@@ -36,6 +40,9 @@ const create = async (task: ITask): Promise<ITask> => {
  */
 const update = async (id: string, props: ITask): Promise<ITask> => {
   const index = db.findIndex((p) => p.id === id);
+
+  if (!db[index]) throw new CustomError(404, `Could not update task with id ${id}`);
+
   db[index] = { ...props };
   return db[index];
 };
