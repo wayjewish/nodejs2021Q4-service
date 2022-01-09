@@ -1,3 +1,4 @@
-database/postgres/*
 node_modules
 test
+logs
+database
