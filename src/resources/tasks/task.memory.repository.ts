@@ -1,13 +1,18 @@
+import { getRepository } from "typeorm";
+import Task from './task.model';
 import { ITask } from './task.types';
 import CustomError from '../../common/customError';
-
-let db: ITask[] = [];
 
 /**
  * get all tasks
  * @returns all tasks
  */
-const getAll = async (): Promise<ITask[]> => db;
+const getAll = async (): Promise<ITask[]> => {
+  const taskRepository = getRepository(Task);
+
+  const allTasks = await taskRepository.find()
+  return allTasks;
+};
 
 /**
  * get task
@@ -15,7 +20,9 @@ const getAll = async (): Promise<ITask[]> => db;
  * @returns task
  */
 const getOne = async (id: string): Promise<ITask | undefined> => {
-  const foundTask = db.find((task) => task.id === id);
+  const taskRepository = getRepository(Task);
+
+  const foundTask = await taskRepository.findOne({ id });
 
   if (!foundTask) throw new CustomError(404, `The task with id ${id} was not found`);
 
@@ -27,9 +34,13 @@ const getOne = async (id: string): Promise<ITask | undefined> => {
  * @param task - object with task parameters
  * @returns created task
  */
-const create = async (task: ITask): Promise<ITask> => {
-  db.push(task);
-  return task;
+const create = async (props: ITask): Promise<ITask> => {
+  const taskRepository = getRepository(Task);
+
+  const task = taskRepository.create(props);
+  const newTask = await taskRepository.save(task);
+  
+  return newTask;
 };
 
 /**
@@ -39,20 +50,34 @@ const create = async (task: ITask): Promise<ITask> => {
  * @returns updated task
  */
 const update = async (id: string, props: ITask): Promise<ITask> => {
-  const index = db.findIndex((p) => p.id === id);
+  const taskRepository = getRepository(Task);
 
-  if (!db[index]) throw new CustomError(404, `Could not update task with id ${id}`);
+  const foundTask = await taskRepository.findOne({ id });
 
-  db[index] = { ...props };
-  return db[index];
+  if (!foundTask) throw new CustomError(404, `Could not update task with id ${id}`);
+
+  const updateTask = await taskRepository.save({
+    ...foundTask,
+    ...props,
+  });
+
+  return updateTask;
 };
 
 /**
  * remove task
  * @param id - id task
  */
-const remove = async (id: string): Promise<void> => {
-  db = db.filter((task) => task.id !== id);
+const remove = async (id: string): Promise<ITask> => {
+  const taskRepository = getRepository(Task);
+
+  const foundTask = await taskRepository.findOne({ id });
+
+  if (!foundTask) throw new CustomError(404, `The user with id ${id} was not found`);
+
+  const deleteTask = await taskRepository.remove(foundTask);
+
+  return deleteTask;
 };
 
 /**
@@ -60,7 +85,11 @@ const remove = async (id: string): Promise<void> => {
  * @param boardId - id board
  */
 const removeInBoards = async (boardId: string): Promise<void> => {
-  db = db.filter((task) => task.boardId !== boardId);
+  const taskRepository = getRepository(Task);
+
+  const foundTasks = await taskRepository.find({ boardId });
+  
+  if (foundTasks.length > 0) await taskRepository.remove(foundTasks);
 };
 
 /**
@@ -68,11 +97,20 @@ const removeInBoards = async (boardId: string): Promise<void> => {
  * @param userId - id user
  */
 const resetUser = async (userId: string): Promise<void> => {
-  db = db.map((task) =>
-    (task.userId === userId)
-    ? { ...task, userId: null }
-    : { ...task }
-  );
+  const taskRepository = getRepository(Task);
+
+  const foundTasks = await taskRepository.find({ userId });
+
+  if (foundTasks.length > 0) {
+    const newTasks = foundTasks.map(task => ({
+      ...task,
+      userId: null,
+    }));
+
+    console.log(newTasks);
+
+    await taskRepository.save(newTasks);
+  }
 };
 
 

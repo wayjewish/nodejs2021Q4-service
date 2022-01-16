@@ -1,13 +1,18 @@
+import { getRepository } from "typeorm";
+import User from './user.model';
 import { IUser } from './user.types';
 import CustomError from '../../common/customError';
-
-let db: IUser[] = [];
 
 /**
  * get all users
  * @returns all users
  */
-const getAll = async (): Promise<IUser[]> => db;
+const getAll = async (): Promise<IUser[]> => {
+  const userRepository = getRepository(User);
+
+  const allUsers = await userRepository.find()
+  return allUsers;
+};
 
 /**
  * get user
@@ -15,7 +20,9 @@ const getAll = async (): Promise<IUser[]> => db;
  * @returns user
  */
 const getOne = async (id: string): Promise<IUser | undefined> => {
-  const foundUser = db.find((user) => user.id === id);
+  const userRepository = getRepository(User);
+
+  const foundUser = await userRepository.findOne({ id });
 
   if (!foundUser) throw new CustomError(404, `The user with id ${id} was not found`);
 
@@ -27,9 +34,13 @@ const getOne = async (id: string): Promise<IUser | undefined> => {
  * @param user - object with user parameters
  * @returns created user
  */
-const create = async (user: IUser): Promise<IUser> => {
-  db.push(user);
-  return user;
+const create = async (props: IUser): Promise<IUser> => {
+  const userRepository = getRepository(User);
+
+  const user = userRepository.create(props);
+  const newUser = await userRepository.save(user);
+  
+  return newUser;
 };
 
 /**
@@ -39,20 +50,34 @@ const create = async (user: IUser): Promise<IUser> => {
  * @returns updated user
  */
 const update = async (id: string, props: IUser): Promise<IUser> => {
-  const index = db.findIndex((p) => p.id === id);
-  
-  if (!db[index]) throw new CustomError(404, `Could not update user with id ${id}`);
+  const userRepository = getRepository(User);
 
-  db[index] = { ...props };
-  return db[index];
+  const foundUser = await userRepository.findOne({ id });
+
+  if (!foundUser) throw new CustomError(404, `Could not update user with id ${id}`);
+
+  const updateUser = await userRepository.save({
+    ...foundUser,
+    ...props,
+  });
+
+  return updateUser;
 };
 
 /**
  * remove user
  * @param id - id user
  */
-const remove = async (id: string): Promise<void> => {
-  db = db.filter((user) => user.id !== id);
+const remove = async (id: string): Promise<IUser> => {
+  const userRepository = getRepository(User);
+
+  const foundUser = await userRepository.findOne({ id });
+
+  if (!foundUser) throw new CustomError(404, `The user with id ${id} was not found`);
+
+  const deleteUser = await userRepository.remove(foundUser);
+
+  return deleteUser;
 };
 
 export default { getAll, getOne, create, update, remove };

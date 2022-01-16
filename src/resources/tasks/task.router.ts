@@ -35,12 +35,11 @@ router.route('/').post(
   routerCatch(
     async (req: Request, res: Response, next: NextFunction) => {
       const {body} = req;
-      const task = new Task({
+
+      const newTask = await tasksService.create({
         ...body,
         boardId: req.params.boardId,
       });
-
-      const newTask = await tasksService.create(task);
 
       res.status(201).json(Task.toResponse(newTask));
       next();

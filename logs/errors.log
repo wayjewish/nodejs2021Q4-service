@@ -1,0 +1,102 @@
+2022-01-16 19:23:38: QueryFailedError undefined: null value in column "order" of relation "task" violates not-null constraint
+QueryFailedError: null value in column "order" of relation "task" violates not-null constraint
+    at QueryFailedError.TypeORMError [as constructor] (/usr/src/app/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/usr/src/app/src/error/QueryFailedError.ts:9:9)
+    at PostgresQueryRunner.<anonymous> (/usr/src/app/src/driver/postgres/PostgresQueryRunner.ts:247:19)
+    at step (/usr/src/app/node_modules/tslib/tslib.js:143:27)
+    at Object.throw (/usr/src/app/node_modules/tslib/tslib.js:124:57)
+    at rejected (/usr/src/app/node_modules/tslib/tslib.js:115:69)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:23:38: CustomError 404: The board with id 6e7327d9-2212-47d0-8cfc-471f302dd23d was not found
+CustomError: The board with id 6e7327d9-2212-47d0-8cfc-471f302dd23d was not found
+    at /usr/src/app/src/resources/boards/board.memory.repository.ts:26:26
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/boards/board.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:23:39: CustomError 404: The task with id 64e17e8c-c4ca-4b9c-adcd-39a9942b08d8 was not found
+CustomError: The task with id 64e17e8c-c4ca-4b9c-adcd-39a9942b08d8 was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:23:39: CustomError 404: The task with id 9d2a3f80-1f3a-4462-a913-749d7c635a59 was not found
+CustomError: The task with id 9d2a3f80-1f3a-4462-a913-749d7c635a59 was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:23:39: CustomError 404: The task with id 2838b7c8-ab83-4223-b7ad-8877cbfa4891 was not found
+CustomError: The task with id 2838b7c8-ab83-4223-b7ad-8877cbfa4891 was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:23:39: CustomError 404: The task with id 23b0d061-53ac-4fa0-9bce-a944bafbf307 was not found
+CustomError: The task with id 23b0d061-53ac-4fa0-9bce-a944bafbf307 was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:23:39: CustomError 404: The task with id 1e2d84ef-5fd4-4687-b610-056fd08ad234 was not found
+CustomError: The task with id 1e2d84ef-5fd4-4687-b610-056fd08ad234 was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:23:39: CustomError 404: The task with id eb47e46c-2d09-4a3c-9c2c-2af0010f276a was not found
+CustomError: The task with id eb47e46c-2d09-4a3c-9c2c-2af0010f276a was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:26:28: QueryFailedError undefined: null value in column "order" of relation "task" violates not-null constraint
+QueryFailedError: null value in column "order" of relation "task" violates not-null constraint
+    at QueryFailedError.TypeORMError [as constructor] (/usr/src/app/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/usr/src/app/src/error/QueryFailedError.ts:9:9)
+    at PostgresQueryRunner.<anonymous> (/usr/src/app/src/driver/postgres/PostgresQueryRunner.ts:247:19)
+    at step (/usr/src/app/node_modules/tslib/tslib.js:143:27)
+    at Object.throw (/usr/src/app/node_modules/tslib/tslib.js:124:57)
+    at rejected (/usr/src/app/node_modules/tslib/tslib.js:115:69)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:36:15: CustomError 404: The board with id 626af8ba-0570-43df-8da4-d92ff4a58b60 was not found
+CustomError: The board with id 626af8ba-0570-43df-8da4-d92ff4a58b60 was not found
+    at /usr/src/app/src/resources/boards/board.memory.repository.ts:26:26
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/boards/board.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:36:15: CustomError 404: The task with id f48b5e40-7b2b-4ffb-a941-909cdabbd110 was not found
+CustomError: The task with id f48b5e40-7b2b-4ffb-a941-909cdabbd110 was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:36:15: CustomError 404: The task with id 4cc50a9a-679f-413c-a882-e81eeaad7c7b was not found
+CustomError: The task with id 4cc50a9a-679f-413c-a882-e81eeaad7c7b was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:36:15: CustomError 404: The task with id 51d467b1-4efb-4ffc-b021-6bf2d0ed410b was not found
+CustomError: The task with id 51d467b1-4efb-4ffc-b021-6bf2d0ed410b was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:36:15: CustomError 404: The task with id 38a6a6a0-e8a4-42ec-b29a-8bcc3a86b8fb was not found
+CustomError: The task with id 38a6a6a0-e8a4-42ec-b29a-8bcc3a86b8fb was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:36:15: CustomError 404: The task with id 3639f9da-712d-41ff-9c51-94df2d1b7f8e was not found
+CustomError: The task with id 3639f9da-712d-41ff-9c51-94df2d1b7f8e was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-16 19:36:15: CustomError 404: The task with id f16426b2-10fd-40c6-a418-2c4a19e2aa17 was not found
+CustomError: The task with id f16426b2-10fd-40c6-a418-2c4a19e2aa17 was not found
+    at /usr/src/app/src/resources/tasks/task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/src/app/src/resources/tasks/task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

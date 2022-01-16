@@ -1,32 +1,47 @@
-import { v4 as uuid } from 'uuid';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
 import { ITask } from './task.types';
+import Board from '../boards/board.model';
+import User from '../users/user.model';
 
-class Task implements ITask {
-  id: string;
-  title: string;
-  order: number; 
-  description: string;
-  userId: string | null;
-  boardId: string | null;
-  columnId: string | null;
+@Entity()
+class Task extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
-  constructor({
-    id = uuid(),
-    title,
-    order,
-    description,
-    userId = null,
-    boardId = null,
-    columnId = null,
-  }: ITask) {
-    this.id = id;
-    this.title = title;
-    this.order = order;
-    this.description = description;
-    this.userId = userId;
-    this.boardId = boardId;
-    this.columnId = columnId;
-  }
+  @Column({
+    nullable: true,
+  })
+  title!: string;
+
+  @Column()
+  order!: number;
+
+  @Column()
+  description!: string;
+
+  @Column({
+    type: 'uuid',
+    nullable: true,
+  })
+  userId!: string | null;
+
+  @Column({
+    type: 'uuid',
+    nullable: true,
+  })
+  boardId!: string | null;
+
+  @Column({
+    type: 'uuid',
+    nullable: true,
+  })
+  columnId!: string | null;
+
+  @ManyToOne(() => Board, (board) => board.id)
+  board!: Board;
+
+  @ManyToOne(() => User, (user) => user.id)
+  user!: User;
 
   /**
    * return task to response

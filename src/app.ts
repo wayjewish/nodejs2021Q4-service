@@ -3,6 +3,8 @@ import swaggerUI from 'swagger-ui-express';
 import path from 'path';
 import YAML from 'yamljs';
 
+import './common/createConnection';
+
 import errorHandler from './logger/handlers/errorHandler';
 import loggerHandler from './logger/handlers/requestHandler';
 

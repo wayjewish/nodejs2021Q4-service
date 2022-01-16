@@ -34,9 +34,8 @@ router.route('/').post(
   routerCatch(
     async (req: Request, res: Response, next: NextFunction) => {
       const {body} = req;
-      const board = new Board(body);
 
-      const newBoard = await boardsService.create(board);
+      const newBoard = await boardsService.create(body);
     
       res.status(201).json(Board.toResponse(newBoard));
       next();
@@ -63,8 +62,8 @@ router.route('/:id').delete(
     async (req: Request, res: Response, next: NextFunction) => {
       const {id} = req.params;
       
-      await boardsService.remove(id);
       await tasksService.removeInBoards(id);
+      await boardsService.remove(id);
     
       res.status(204).json();
       next();

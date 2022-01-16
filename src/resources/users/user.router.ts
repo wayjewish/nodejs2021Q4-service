@@ -34,9 +34,8 @@ router.route('/').post(
   routerCatch(
     async (req: Request, res: Response, next: NextFunction) => {
       const {body} = req;
-      const user = new User(body);
-
-      const newUser = await usersService.create(user);
+      
+      const newUser = await usersService.create(body);
     
       res.status(201).json(User.toResponse(newUser));
       next();
@@ -63,8 +62,8 @@ router.route('/:id').delete(
     async (req: Request, res: Response, next: NextFunction) => {
       const {id} = req.params;
       
-      await usersService.remove(id);
       await tasksService.resetUser(id);
+      await usersService.remove(id);
     
       res.status(204).json();
       next();

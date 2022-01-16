@@ -1,20 +1,25 @@
-import { v4 as uuid } from 'uuid';
-import { IBoard, IColumn } from './board.types';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import { IBoard } from './board.types';
 
-class Board implements IBoard {
-  id: string;
-  title: string;
-  columns: IColumn[] | [];
+@Entity()
+class Board extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
-  constructor({
-    id = uuid(),
-    title,
-    columns = [],
-  }: IBoard) {
-    this.id = id;
-    this.title = title;
-    this.columns = columns;
-  }
+  @Column()
+  title!: string;
+
+  @Column({
+    type: 'jsonb',
+    array: false,
+    default: () => "'[]'",
+    nullable: false,
+  })
+  columns!: { 
+    id: string; 
+    title: string; 
+    order: number 
+  }[];
 
   /**
    * return board to response

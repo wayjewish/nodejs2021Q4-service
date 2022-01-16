@@ -1,23 +1,19 @@
-import { v4 as uuid } from 'uuid';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
 import { IUser } from './user.types';
 
-class User implements IUser {
-  id: string;
-  name: string;
-  login: string;
-  password: string;
+@Entity()
+class User extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
 
-  constructor({
-    id = uuid(),
-    name,
-    login,
-    password
-  }: IUser) {
-    this.id = id;
-    this.name = name;
-    this.login = login;
-    this.password = password;
-  }
+  @Column()
+  name!: string;
+
+  @Column()
+  login!: string;
+
+  @Column()
+  password!: string;
 
   /**
    * return user object without password to response
