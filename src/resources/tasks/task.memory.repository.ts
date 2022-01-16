@@ -107,8 +107,6 @@ const resetUser = async (userId: string): Promise<void> => {
       userId: null,
     }));
 
-    console.log(newTasks);
-
     await taskRepository.save(newTasks);
   }
 };
