@@ -8,6 +8,9 @@ import './typeorm/createConnection';
 import errorHandler from './logger/handlers/errorHandler';
 import loggerHandler from './logger/handlers/requestHandler';
 
+import loginRouter from './resources/login/login.router';
+import checkAuthToken from './authorization/checkAuthToken';
+
 import userRouter  from './resources/users/user.router';
 import boardRouter from './resources/boards/board.router';
 import taskRouter from './resources/tasks/task.router';
@@ -26,6 +29,10 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
   }
   next();
 });
+
+app.use('/login', loginRouter);
+
+app.use(checkAuthToken);
 
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);

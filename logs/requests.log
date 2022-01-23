@@ -1,0 +1,575 @@
+2022-01-23 18:36:40: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 18:36:54: CustomError 403: Wrong user login
+CustomError: Wrong user login
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\login\login.controller.ts:16:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\login\login.controller.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 18:36:55: CustomError 403: Wrong user login
+CustomError: Wrong user login
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\login\login.controller.ts:16:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\login\login.controller.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 18:36:55: CustomError 403: Wrong user login
+CustomError: Wrong user login
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\login\login.controller.ts:16:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\login\login.controller.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 18:39:28: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 18:39:28: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 18:40:43: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"admin","login":"admin","password":"admin"}
+
+2022-01-23 18:40:45: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 18:41:19: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 18:41:20: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 18:41:35: GET /boards
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:02:59: Error undefined: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:267:15)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:158:21)
+    at checkAuthToken (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\authorization\checkAuthToken.ts:19:25)
+    at Layer.handle [as handle_request] (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:284:7
+2022-01-23 19:02:59: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:12: Error undefined: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:267:15)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:158:21)
+    at checkAuthToken (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\authorization\checkAuthToken.ts:19:25)
+    at Layer.handle [as handle_request] (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:284:7
+2022-01-23 19:03:12: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:13: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:13: GET /users/505dae56-d45e-4c1f-82c3-ecdd8b350313
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:13: DELETE /users/505dae56-d45e-4c1f-82c3-ecdd8b350313
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:13: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:13: DELETE /users/fb42f848-2bf7-46be-94bc-95728b94ccd0
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:13: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:13: PUT /users/890ceb41-7d07-4b43-8a51-d0916d977dd9
+StatusCode: 200
+Query: 
+Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"890ceb41-7d07-4b43-8a51-d0916d977dd9"}
+
+2022-01-23 19:03:13: GET /users/890ceb41-7d07-4b43-8a51-d0916d977dd9
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:13: DELETE /users/890ceb41-7d07-4b43-8a51-d0916d977dd9
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:13: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:13: DELETE /users/9d5deeff-9cf8-49ae-9c54-b76945655add
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:13: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:13: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:13: POST /boards/5105ff54-7914-48e9-b5dc-93ae1d4be4cc/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"9b05c328-ff10-43cf-8294-02fb067bd100","boardId":"5105ff54-7914-48e9-b5dc-93ae1d4be4cc"}
+
+2022-01-23 19:03:13: POST /boards/5105ff54-7914-48e9-b5dc-93ae1d4be4cc/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"9b05c328-ff10-43cf-8294-02fb067bd100","boardId":"5105ff54-7914-48e9-b5dc-93ae1d4be4cc"}
+
+2022-01-23 19:03:13: DELETE /users/9b05c328-ff10-43cf-8294-02fb067bd100
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:13: GET /boards/5105ff54-7914-48e9-b5dc-93ae1d4be4cc/tasks/7fd75b19-c117-42c2-9f9c-4914138fd85c
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:13: GET /boards/5105ff54-7914-48e9-b5dc-93ae1d4be4cc/tasks/8c450487-0620-4254-9682-6ae3984c8b6b
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:13: DELETE /boards/5105ff54-7914-48e9-b5dc-93ae1d4be4cc/tasks/7fd75b19-c117-42c2-9f9c-4914138fd85c
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:13: DELETE /boards/5105ff54-7914-48e9-b5dc-93ae1d4be4cc/tasks/8c450487-0620-4254-9682-6ae3984c8b6b
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:13: DELETE /boards/5105ff54-7914-48e9-b5dc-93ae1d4be4cc
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: Error undefined: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:267:15)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:158:21)
+    at checkAuthToken (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\authorization\checkAuthToken.ts:19:25)
+    at Layer.handle [as handle_request] (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:284:7
+2022-01-23 19:03:31: Error undefined: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:267:15)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:158:21)
+    at checkAuthToken (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\authorization\checkAuthToken.ts:19:25)
+    at Layer.handle [as handle_request] (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:284:7
+2022-01-23 19:03:31: Error undefined: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:267:15)
+    at ServerResponse.send (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\response.js:158:21)
+    at checkAuthToken (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\authorization\checkAuthToken.ts:19:25)
+    at Layer.handle [as handle_request] (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\node_modules\express\lib\router\index.js:284:7
+2022-01-23 19:03:31: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:31: GET /users
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:31: POST /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2022-01-23 19:03:31: GET /boards
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/7c94fb9a-82fb-48f1-a5fb-9445ed28024d
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:31: GET /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks/2ba1f337-7ddc-4e9a-a97c-f8f2e70b7257
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2022-01-23 19:03:31: DELETE /boards/68e25585-80cb-4600-90b6-16daab10c0d0
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks/33377216-f25f-4b10-a96c-ac6f4c71f42e
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:31: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:31: POST /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}
+
+2022-01-23 19:03:31: GET /users/6163b5b9-d668-4e51-ae4e-d62a5ff5c773
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: PUT /boards/c2414846-0247-407a-8cfb-ab4b8d4390bb
+StatusCode: 200
+Query: 
+Body: {"title":"Autotest updated board","columns":[{"order":1,"title":"Backlog"},{"order":2,"title":"Sprint"}],"id":"c2414846-0247-407a-8cfb-ab4b8d4390bb"}
+
+2022-01-23 19:03:31: GET /boards/c2414846-0247-407a-8cfb-ab4b8d4390bb
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: PUT /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks/87eae3cf-232c-4138-99ea-aa1342a3263b
+StatusCode: 200
+Query: 
+Body: {"title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"b6656d26-b705-47e6-83ba-21fac746c666","columnId":null,"id":"87eae3cf-232c-4138-99ea-aa1342a3263b"}
+
+2022-01-23 19:03:31: DELETE /users/6163b5b9-d668-4e51-ae4e-d62a5ff5c773
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks/87eae3cf-232c-4138-99ea-aa1342a3263b
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks/2ba1f337-7ddc-4e9a-a97c-f8f2e70b7257
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /boards/c2414846-0247-407a-8cfb-ab4b8d4390bb
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:31: DELETE /boards/b6656d26-b705-47e6-83ba-21fac746c666/tasks/2ba1f337-7ddc-4e9a-a97c-f8f2e70b7257
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: CustomError 404: The task with id 2ba1f337-7ddc-4e9a-a97c-f8f2e70b7257 was not found
+CustomError: The task with id 2ba1f337-7ddc-4e9a-a97c-f8f2e70b7257 was not found
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 19:03:31: DELETE /boards/63e48348-7ad4-4534-ad05-c0b1f58003f4
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: CustomError 404: The board with id 63e48348-7ad4-4534-ad05-c0b1f58003f4 was not found
+CustomError: The board with id 63e48348-7ad4-4534-ad05-c0b1f58003f4 was not found
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\boards\board.memory.repository.ts:26:26
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\boards\board.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 19:03:31: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:31: DELETE /boards/b6656d26-b705-47e6-83ba-21fac746c666
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"9d6e1a19-e7dc-41a7-87b6-045fd6d2d018","userId":null,"columnId":null}
+
+2022-01-23 19:03:31: POST /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"9d6e1a19-e7dc-41a7-87b6-045fd6d2d018","userId":null,"columnId":null}
+
+2022-01-23 19:03:31: POST /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"9d6e1a19-e7dc-41a7-87b6-045fd6d2d018","userId":null,"columnId":null}
+
+2022-01-23 19:03:31: POST /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"9d6e1a19-e7dc-41a7-87b6-045fd6d2d018","userId":null,"columnId":null}
+
+2022-01-23 19:03:31: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:31: POST /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"9d6e1a19-e7dc-41a7-87b6-045fd6d2d018","userId":null,"columnId":null}
+
+2022-01-23 19:03:31: GET /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks/2e43cc7e-831e-4f63-b3fd-1dfac6ccfca0
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks/64b38127-9c8d-46a7-aa3a-424a0e855d7a
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks/ac21e4d6-88d2-459c-8290-4cf82cb68f13
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks/fb513198-380f-48b6-af16-af6170a06c0f
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018/tasks/b6d546da-7db8-4690-9635-0de86c5ae9e2
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /users/daea05e6-e372-4780-a368-9ab333516e8b
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /boards/9d6e1a19-e7dc-41a7-87b6-045fd6d2d018
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: CustomError 404: The task with id 2e43cc7e-831e-4f63-b3fd-1dfac6ccfca0 was not found
+CustomError: The task with id 2e43cc7e-831e-4f63-b3fd-1dfac6ccfca0 was not found
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 19:03:31: CustomError 404: The task with id 64b38127-9c8d-46a7-aa3a-424a0e855d7a was not found
+CustomError: The task with id 64b38127-9c8d-46a7-aa3a-424a0e855d7a was not found
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 19:03:31: CustomError 404: The task with id ac21e4d6-88d2-459c-8290-4cf82cb68f13 was not found
+CustomError: The task with id ac21e4d6-88d2-459c-8290-4cf82cb68f13 was not found
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 19:03:31: CustomError 404: The task with id fb513198-380f-48b6-af16-af6170a06c0f was not found
+CustomError: The task with id fb513198-380f-48b6-af16-af6170a06c0f was not found
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 19:03:31: CustomError 404: The task with id b6d546da-7db8-4690-9635-0de86c5ae9e2 was not found
+CustomError: The task with id b6d546da-7db8-4690-9635-0de86c5ae9e2 was not found
+    at C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:27:25
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\diman\Desktop\git\nodejs2021Q4-service\src\resources\tasks\task.memory.repository.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2022-01-23 19:03:31: DELETE /boards/7c94fb9a-82fb-48f1-a5fb-9445ed28024d
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:31: PUT /users/ba47188a-1f76-4d3b-aa19-5329eb541a1a
+StatusCode: 200
+Query: 
+Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"ba47188a-1f76-4d3b-aa19-5329eb541a1a"}
+
+2022-01-23 19:03:31: GET /users/ba47188a-1f76-4d3b-aa19-5329eb541a1a
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /users/ba47188a-1f76-4d3b-aa19-5329eb541a1a
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:31: DELETE /users/22680d6d-7f35-4954-969a-573102185421
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: POST /users
+StatusCode: 201
+Query: 
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+
+2022-01-23 19:03:31: POST /boards
+StatusCode: 201
+Query: 
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+
+2022-01-23 19:03:31: POST /boards/1fc6d168-0f84-4674-a235-75678cbc6cf4/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"a45902b8-c473-44a6-a1b3-9bbdcdfe4f56","boardId":"1fc6d168-0f84-4674-a235-75678cbc6cf4"}
+
+2022-01-23 19:03:31: POST /boards/1fc6d168-0f84-4674-a235-75678cbc6cf4/tasks
+StatusCode: 201
+Query: 
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"a45902b8-c473-44a6-a1b3-9bbdcdfe4f56","boardId":"1fc6d168-0f84-4674-a235-75678cbc6cf4"}
+
+2022-01-23 19:03:31: DELETE /users/a45902b8-c473-44a6-a1b3-9bbdcdfe4f56
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/1fc6d168-0f84-4674-a235-75678cbc6cf4/tasks/d562fcca-7944-4592-91a1-8ab4b95b612f
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: GET /boards/1fc6d168-0f84-4674-a235-75678cbc6cf4/tasks/aa19178a-4f97-4437-bef5-a8a7f306d188
+StatusCode: 200
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /boards/1fc6d168-0f84-4674-a235-75678cbc6cf4/tasks/d562fcca-7944-4592-91a1-8ab4b95b612f
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /boards/1fc6d168-0f84-4674-a235-75678cbc6cf4/tasks/aa19178a-4f97-4437-bef5-a8a7f306d188
+StatusCode: 204
+Query: 
+Body: 
+
+2022-01-23 19:03:31: DELETE /boards/1fc6d168-0f84-4674-a235-75678cbc6cf4
+StatusCode: 204
+Query: 
+Body: 
+

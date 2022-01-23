@@ -1,4 +1,5 @@
 import { getRepository } from "typeorm";
+import bcrypt from 'bcrypt';
 import User from './user.model';
 import { IUser } from './user.types';
 import CustomError from '../../common/customError';
@@ -37,7 +38,12 @@ const getOne = async (id: string): Promise<IUser | undefined> => {
 const create = async (props: IUser): Promise<IUser> => {
   const userRepository = getRepository(User);
 
-  const user = userRepository.create(props);
+  const password = await bcrypt.hash(props.password, 10);
+
+  const user = userRepository.create({
+    ...props,
+    password,
+  });
   const newUser = await userRepository.save(user);
   
   return newUser;
