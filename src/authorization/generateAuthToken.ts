@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-// import CONFIG from '../common/config';
+import CONFIG from '../common/config';
 import { IUser } from '../resources/users/user.types';
 
 const generateAuthToken = async (user: IUser): Promise<string> => {
@@ -8,7 +8,7 @@ const generateAuthToken = async (user: IUser): Promise<string> => {
             userId: user.id,
             login: user.login,
         }, 
-        'secret-key',
+        CONFIG.JWT_SECRET_KEY || 'secret-key',
     );
 
     return token;

@@ -3,13 +3,14 @@ import swaggerUI from 'swagger-ui-express';
 import path from 'path';
 import YAML from 'yamljs';
 
-import './typeorm/createConnection';
+import { createConnection } from "typeorm";
 
 import errorHandler from './logger/handlers/errorHandler';
 import loggerHandler from './logger/handlers/requestHandler';
 
 import loginRouter from './resources/login/login.router';
 import checkAuthToken from './authorization/checkAuthToken';
+import addAdmin from './authorization/addUserAdmin';
 
 import userRouter  from './resources/users/user.router';
 import boardRouter from './resources/boards/board.router';
@@ -39,8 +40,12 @@ app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);
 
 app.use(loggerHandler);
-
 app.use(errorHandler);
+
+createConnection().then(() => {
+  addAdmin();
+});
+
 
 // throw Error('Oops!');
 // Promise.reject(Error('Oops! Promise!'));

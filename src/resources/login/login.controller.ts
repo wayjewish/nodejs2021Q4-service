@@ -1,5 +1,5 @@
 import { getRepository } from "typeorm";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import User from '../users/user.model';
 import { ILogin, IToken } from './login.types';
 import CustomError from '../../common/customError';

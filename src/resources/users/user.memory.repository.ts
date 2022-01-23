@@ -1,5 +1,5 @@
-import { getRepository } from "typeorm";
-import bcrypt from 'bcrypt';
+import { getRepository } from 'typeorm';
+import bcrypt from 'bcryptjs';
 import User from './user.model';
 import { IUser } from './user.types';
 import CustomError from '../../common/customError';
