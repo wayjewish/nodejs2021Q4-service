@@ -1,19 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2016",
     "module": "commonjs",
-    "baseUrl": "./src",
+    "target": "es2017",
+    "sourceMap": true,
     "outDir": "./dist",
+    "baseUrl": "./",
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-  },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }
