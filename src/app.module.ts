@@ -3,9 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [TypeOrmModule.forRoot({ autoLoadEntities: true }), UsersModule],
+  imports: [
+    ConfigModule.forRoot(),
+    TypeOrmModule.forRoot({ autoLoadEntities: true }),
+    UsersModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

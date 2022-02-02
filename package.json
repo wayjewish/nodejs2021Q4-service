@@ -1,6 +1,7 @@
 {
   "name": "rs-rest-service-starter",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "REST service starter for RS School",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -19,10 +20,13 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.1.6",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^8.0.3",
     "bcrypt": "^5.0.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
     "dotenv": "^15.0.0",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
@@ -39,6 +43,7 @@
     "@types/jest": "27.0.2",
     "@types/node": "^16.0.0",
     "@types/supertest": "^2.0.11",
+    "@types/validator": "^13.7.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
