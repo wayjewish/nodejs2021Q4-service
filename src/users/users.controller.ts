@@ -13,30 +13,30 @@ import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
-  constructor(private UsersService: UsersService) {}
+  constructor(private usersService: UsersService) {}
 
   @Get()
   findAll() {
-    return this.UsersService.findAll();
+    return this.usersService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {
-    return this.UsersService.findOne(id);
+    return this.usersService.findOne(id);
   }
 
   @Post()
   create(@Body() UserDto: UserDto) {
-    return this.UsersService.create(UserDto);
+    return this.usersService.create(UserDto);
   }
 
   @Put(':id')
   update(@Param('id', ParseUUIDPipe) id: string, @Body() UserDto: UserDto) {
-    return this.UsersService.update(id, UserDto);
+    return this.usersService.update(id, UserDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.UsersService.remove(id);
+    return this.usersService.remove(id);
   }
 }
