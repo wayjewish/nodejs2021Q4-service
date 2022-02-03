@@ -1,50 +1,61 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Board } from './tasks.entity';
-import { BoardDto } from './tasks.dto';
+import { Task } from './tasks.entity';
+import { TaskDto } from './tasks.dto';
+import { BoardsService } from '../boards/boards.service';
 
 @Injectable()
-export class BoardsService {
+export class TasksService {
   constructor(
-    @InjectRepository(Board)
-    private boardsRepository: Repository<Board>,
+    @InjectRepository(Task)
+    private tasksRepository: Repository<Task>,
+    private boardService: BoardsService,
   ) {}
 
-  async findAll(): Promise<Board[]> {
-    const allBoards = await this.boardsRepository.find();
-    return allBoards;
+  async findAll(boardId: string): Promise<Task[]> {
+    const allTasks = await this.tasksRepository.find({ where: { boardId } });
+    return allTasks;
   }
 
-  async findOne(id: string): Promise<Board> {
-    const foundBoard = await this.boardsRepository.findOne(id);
-    if (!foundBoard) throw new NotFoundException();
-    return foundBoard;
+  async findOne(boardId: string, taskId: string): Promise<Task> {
+    const foundTask = await this.tasksRepository.findOne({
+      id: taskId,
+      boardId,
+    });
+    if (!foundTask) throw new NotFoundException();
+    return foundTask;
   }
 
-  async create(props: BoardDto): Promise<Board> {
-    const board = this.boardsRepository.create(props);
-    const newBoard = await this.boardsRepository.save(board);
-    return newBoard;
+  async create(boardId: string, props: TaskDto): Promise<Task> {
+    await this.boardService.findOne(boardId);
+
+    const task = this.tasksRepository.create({ ...props, boardId });
+
+    const newTask = await this.tasksRepository.save(task);
+    return newTask;
   }
 
-  async update(id: string, props: BoardDto): Promise<Board> {
-    const foundBoard = await this.boardsRepository.findOne(id);
-    if (!foundBoard) throw new NotFoundException();
+  async update(boardId: string, taskId: string, props: TaskDto): Promise<Task> {
+    const foundTask = await this.tasksRepository.findOne({
+      id: taskId,
+      boardId,
+    });
+    if (!foundTask) throw new NotFoundException();
 
-    const updateBoard = await this.boardsRepository.save({
-      ...foundBoard,
+    const updateTask = await this.tasksRepository.save({
+      ...foundTask,
       ...props,
     });
 
-    return updateBoard;
+    return updateTask;
   }
 
-  async remove(id: string): Promise<Board> {
-    const foundBoard = await this.boardsRepository.findOne(id);
-    if (!foundBoard) throw new NotFoundException();
+  async remove(id: string): Promise<Task> {
+    const foundTask = await this.tasksRepository.findOne(id);
+    if (!foundTask) throw new NotFoundException();
 
-    const deleteBoard = await this.boardsRepository.remove(foundBoard);
-    return deleteBoard;
+    const deleteTask = await this.tasksRepository.remove(foundTask);
+    return deleteTask;
   }
 }

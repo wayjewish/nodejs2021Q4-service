@@ -50,6 +50,6 @@ export class TasksController {
     @Param('boardId', ParseUUIDPipe) boardId: string,
     @Param('taskId', ParseUUIDPipe) taskId: string,
   ) {
-    return this.TasksService.remove(id);
+    return this.TasksService.remove(boardId, taskId);
   }
 }
