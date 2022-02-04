@@ -26,13 +26,13 @@ export class BoardsController {
   }
 
   @Post()
-  create(@Body() BoardDto: BoardDto) {
-    return this.boardsService.create(BoardDto);
+  create(@Body() boardDto: BoardDto) {
+    return this.boardsService.create(boardDto);
   }
 
   @Put(':id')
-  update(@Param('id', ParseUUIDPipe) id: string, @Body() BoardDto: BoardDto) {
-    return this.boardsService.update(id, BoardDto);
+  update(@Param('id', ParseUUIDPipe) id: string, @Body() boardDto: BoardDto) {
+    return this.boardsService.update(id, boardDto);
   }
 
   @Delete(':id')

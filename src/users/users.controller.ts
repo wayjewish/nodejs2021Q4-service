@@ -26,13 +26,13 @@ export class UsersController {
   }
 
   @Post()
-  create(@Body() UserDto: UserDto) {
-    return this.usersService.create(UserDto);
+  create(@Body() userDto: UserDto) {
+    return this.usersService.create(userDto);
   }
 
   @Put(':id')
-  update(@Param('id', ParseUUIDPipe) id: string, @Body() UserDto: UserDto) {
-    return this.usersService.update(id, UserDto);
+  update(@Param('id', ParseUUIDPipe) id: string, @Body() userDto: UserDto) {
+    return this.usersService.update(id, userDto);
   }
 
   @Delete(':id')

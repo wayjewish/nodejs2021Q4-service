@@ -31,18 +31,18 @@ export class TasksController {
   @Post()
   create(
     @Param('boardId', ParseUUIDPipe) boardId: string,
-    @Body() TaskDto: TaskDto,
+    @Body() taskDto: TaskDto,
   ) {
-    return this.TasksService.create(boardId, TaskDto);
+    return this.TasksService.create(boardId, taskDto);
   }
 
   @Put(':taskId')
   update(
     @Param('boardId', ParseUUIDPipe) boardId: string,
     @Param('taskId', ParseUUIDPipe) taskId: string,
-    @Body() TaskDto: TaskDto,
+    @Body() taskDto: TaskDto,
   ) {
-    return this.TasksService.update(boardId, taskId, TaskDto);
+    return this.TasksService.update(boardId, taskId, taskDto);
   }
 
   @Delete(':taskId')
