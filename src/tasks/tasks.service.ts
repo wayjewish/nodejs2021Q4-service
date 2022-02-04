@@ -43,16 +43,15 @@ export class TasksService {
     });
     if (!foundTask) throw new NotFoundException();
 
-    const updateTask = await this.tasksRepository.save({
-      ...foundTask,
-      ...props,
-    });
+    Object.assign(foundTask, props);
+
+    const updateTask = await this.tasksRepository.save(foundTask);
 
     return updateTask;
   }
 
-  async remove(id: string): Promise<Task> {
-    const foundTask = await this.tasksRepository.findOne(id);
+  async remove(taskId: string): Promise<Task> {
+    const foundTask = await this.tasksRepository.findOne(taskId);
     if (!foundTask) throw new NotFoundException();
 
     const deleteTask = await this.tasksRepository.remove(foundTask);

@@ -20,7 +20,7 @@ export class TasksController {
     return this.TasksService.findAll(boardId);
   }
 
-  @Get(':id')
+  @Get(':taskId')
   findOne(
     @Param('boardId', ParseUUIDPipe) boardId: string,
     @Param('taskId', ParseUUIDPipe) taskId: string,
@@ -36,7 +36,7 @@ export class TasksController {
     return this.TasksService.create(boardId, TaskDto);
   }
 
-  @Put(':id')
+  @Put(':taskId')
   update(
     @Param('boardId', ParseUUIDPipe) boardId: string,
     @Param('taskId', ParseUUIDPipe) taskId: string,
@@ -45,11 +45,8 @@ export class TasksController {
     return this.TasksService.update(boardId, taskId, TaskDto);
   }
 
-  @Delete(':id')
-  remove(
-    @Param('boardId', ParseUUIDPipe) boardId: string,
-    @Param('taskId', ParseUUIDPipe) taskId: string,
-  ) {
-    return this.TasksService.remove(boardId, taskId);
+  @Delete(':taskId')
+  remove(@Param('taskId', ParseUUIDPipe) taskId: string) {
+    return this.TasksService.remove(taskId);
   }
 }

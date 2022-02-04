@@ -10,6 +10,7 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 
 import { UsersModule } from './users/users.module';
 import { BoardsModule } from './boards/boards.module';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { BoardsModule } from './boards/boards.module';
     }),
     UsersModule,
     BoardsModule,
+    TasksModule,
   ],
   controllers: [AppController],
   providers: [AppService],

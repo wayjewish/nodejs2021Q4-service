@@ -37,9 +37,9 @@ export class Task extends BaseEntity {
   })
   columnId!: string | null;
 
-  @ManyToOne(() => Board, (board) => board.id)
+  @ManyToOne(() => Board, (board) => board.id, { onDelete: 'CASCADE' })
   board!: Board;
 
-  @ManyToOne(() => User, (user) => user.id)
+  @ManyToOne(() => User, (user) => user.id, { onDelete: 'SET NULL' })
   user!: User;
 }
