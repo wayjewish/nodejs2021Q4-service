@@ -58,4 +58,10 @@ export class UsersService {
     const deleteUser = await this.usersRepository.remove(foundUser);
     return new UserEntity(deleteUser);
   }
+
+  async findByLogin(login: string): Promise<UserEntity> {
+    const foundUser = await this.usersRepository.findOne({ login });
+    if (!foundUser) throw new NotFoundException();
+    return foundUser;
+  }
 }

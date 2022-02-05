@@ -7,10 +7,13 @@ import {
   Param,
   Body,
   ParseUUIDPipe,
+  UseGuards,
 } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { TaskDto } from './tasks.dto';
 import { TasksService } from './tasks.service';
 
+@UseGuards(JwtAuthGuard)
 @Controller('/boards/:boardId/tasks')
 export class TasksController {
   constructor(private TasksService: TasksService) {}

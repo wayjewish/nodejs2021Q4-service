@@ -15,8 +15,7 @@ export class AuthService {
     login: string,
     password: string,
   ): Promise<UserEntity | null> {
-    console.log(login, password);
-    const foundUser = await this.usersService.findOne(login);
+    const foundUser = await this.usersService.findByLogin(login);
 
     if (foundUser && bcrypt.compareSync(password, foundUser.password)) {
       return foundUser;
@@ -26,7 +25,6 @@ export class AuthService {
   }
 
   async login(user: UserEntity) {
-    console.log(user);
     const payload = { id: user.id, login: user.login };
     return {
       token: this.jwtService.sign(payload),
