@@ -9,18 +9,21 @@ import {
   ParseUUIDPipe,
   UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { TaskDto } from './tasks.dto';
 import { TasksService } from './tasks.service';
 
 @UseGuards(JwtAuthGuard)
+@ApiTags('tasks')
+@ApiBearerAuth()
 @Controller('/boards/:boardId/tasks')
 export class TasksController {
-  constructor(private TasksService: TasksService) {}
+  constructor(private tasksService: TasksService) {}
 
   @Get()
   findAll(@Param('boardId', ParseUUIDPipe) boardId: string) {
-    return this.TasksService.findAll(boardId);
+    return this.tasksService.findAll(boardId);
   }
 
   @Get(':taskId')
@@ -28,7 +31,7 @@ export class TasksController {
     @Param('boardId', ParseUUIDPipe) boardId: string,
     @Param('taskId', ParseUUIDPipe) taskId: string,
   ) {
-    return this.TasksService.findOne(boardId, taskId);
+    return this.tasksService.findOne(boardId, taskId);
   }
 
   @Post()
@@ -36,7 +39,7 @@ export class TasksController {
     @Param('boardId', ParseUUIDPipe) boardId: string,
     @Body() taskDto: TaskDto,
   ) {
-    return this.TasksService.create(boardId, taskDto);
+    return this.tasksService.create(boardId, taskDto);
   }
 
   @Put(':taskId')
@@ -45,11 +48,14 @@ export class TasksController {
     @Param('taskId', ParseUUIDPipe) taskId: string,
     @Body() taskDto: TaskDto,
   ) {
-    return this.TasksService.update(boardId, taskId, taskDto);
+    return this.tasksService.update(boardId, taskId, taskDto);
   }
 
   @Delete(':taskId')
-  remove(@Param('taskId', ParseUUIDPipe) taskId: string) {
-    return this.TasksService.remove(taskId);
+  remove(
+    @Param('boardId', ParseUUIDPipe) boardId: string,
+    @Param('taskId', ParseUUIDPipe) taskId: string,
+  ) {
+    return this.tasksService.remove(taskId);
   }
 }

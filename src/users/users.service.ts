@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import bcrypt from 'bcrypt';
-import { User, UserEntity } from './users.entity';
+import { User } from './users.entity';
 import { UserDto } from './users.dto';
 
 @Injectable()
@@ -12,20 +12,20 @@ export class UsersService {
     private usersRepository: Repository<User>,
   ) {}
 
-  async findAll(): Promise<UserEntity[]> {
+  async findAll(): Promise<User[]> {
     const allUsers = await this.usersRepository.find();
     return allUsers.map((user) => {
-      return new UserEntity(user);
+      return user;
     });
   }
 
-  async findOne(id: string): Promise<UserEntity> {
+  async findOne(id: string): Promise<User> {
     const foundUser = await this.usersRepository.findOne(id);
     if (!foundUser) throw new NotFoundException();
-    return new UserEntity(foundUser);
+    return foundUser;
   }
 
-  async create(props: UserDto): Promise<UserEntity> {
+  async create(props: UserDto): Promise<User> {
     const password = await bcrypt.hash(props.password, 10);
     const user = this.usersRepository.create({
       ...props,
@@ -33,10 +33,10 @@ export class UsersService {
     });
 
     const newUser = await this.usersRepository.save(user);
-    return new UserEntity(newUser);
+    return newUser;
   }
 
-  async update(id: string, props: UserDto): Promise<UserEntity> {
+  async update(id: string, props: UserDto): Promise<User> {
     const foundUser = await this.usersRepository.findOne(id);
     if (!foundUser) throw new NotFoundException();
 
@@ -48,18 +48,18 @@ export class UsersService {
       password,
     });
 
-    return new UserEntity(updateUser);
+    return updateUser;
   }
 
-  async remove(id: string): Promise<UserEntity> {
+  async remove(id: string): Promise<User> {
     const foundUser = await this.usersRepository.findOne(id);
     if (!foundUser) throw new NotFoundException();
 
     const deleteUser = await this.usersRepository.remove(foundUser);
-    return new UserEntity(deleteUser);
+    return deleteUser;
   }
 
-  async findByLogin(login: string): Promise<UserEntity> {
+  async findByLogin(login: string): Promise<User> {
     const foundUser = await this.usersRepository.findOne({ login });
     if (!foundUser) throw new NotFoundException();
     return foundUser;

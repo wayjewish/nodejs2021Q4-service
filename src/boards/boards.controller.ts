@@ -9,11 +9,14 @@ import {
   ParseUUIDPipe,
   UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { BoardDto } from './boards.dto';
 import { BoardsService } from './boards.service';
 
 @UseGuards(JwtAuthGuard)
+@ApiTags('boards')
+@ApiBearerAuth()
 @Controller('boards')
 export class BoardsController {
   constructor(private boardsService: BoardsService) {}

@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
 import { Exclude } from 'class-transformer';
+import { ApiHideProperty } from '@nestjs/swagger';
 
 @Entity()
 export class User extends BaseEntity {
@@ -13,18 +14,7 @@ export class User extends BaseEntity {
   login!: string;
 
   @Column()
-  password!: string;
-}
-
-export class UserEntity {
-  id!: string;
-  name!: string;
-  login!: string;
-
   @Exclude()
+  @ApiHideProperty()
   password!: string;
-
-  constructor(partial: Partial<UserEntity>) {
-    Object.assign(this, partial);
-  }
 }
