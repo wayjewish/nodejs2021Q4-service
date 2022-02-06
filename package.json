@@ -10,7 +10,10 @@
     "start:prod": "node dist/main",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
-    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
+    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "migration:create": "npm run typeorm migration:create -- -n PostRefactoring",
+    "migration:generate": "npm run typeorm migration:generate -- -n MigrationFile"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",

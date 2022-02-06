@@ -65,7 +65,7 @@ export class UsersService {
     return foundUser;
   }
 
-  async addDmin(): Promise<void> {
+  async addAdmin(): Promise<void> {
     const foundAmin = await this.usersRepository.findOne({ login: 'admin' });
     if (!foundAmin) {
       const props = {

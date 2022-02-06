@@ -1,5 +1,17 @@
 version: '3.9'
 services:
+  node:
+    build: .
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - postgres
+    restart: always
+    volumes:
+      - ./src:/usr/src/app/src
+      - logs:/usr/src/app/logs
+    networks:
+      - custom
   postgres:
     build: ./database
     ports:
