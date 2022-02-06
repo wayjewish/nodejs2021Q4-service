@@ -8,12 +8,25 @@ config:
     path: "./test.csv"
     fields:
       - "user"
-      
+
+before:
+  flow:
+    - post:
+        url: "/login"
+        json:
+          login: "admin"
+          password: "admin"
+        capture:
+          - json: $.token
+            as: token     
+
 scenarios:
-  - name: "test"
+  - name: "users"
     flow:
       - post:
           url: "/users"
+          headers:
+            authorization: "Bearer {{ token }}"
           json:
             name: "{{ user }}"
             login: "{{ user }}"
@@ -23,10 +36,16 @@ scenarios:
               as: "userId" 
       - get:
           url: "/users"
+          headers:
+            authorization: "Bearer {{ token }}"
       - get:
           url: "/users/{{ userId }}"
+          headers:
+            authorization: "Bearer {{ token }}"
       - put:
           url: "/users/{{ userId }}"
+          headers:
+            authorization: "Bearer {{ token }}"
           json:
             name: "{{ user }}"
             login: "{{ user }}"

@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import bcrypt from 'bcrypt';
@@ -26,6 +30,11 @@ export class UsersService {
   }
 
   async create(props: UserDto): Promise<UserEntity> {
+    const foundUserLogin = await this.usersRepository.findOne({
+      login: props.login,
+    });
+    if (foundUserLogin) throw new ConflictException();
+
     const password = await bcrypt.hash(props.password, 10);
     const user = this.usersRepository.create({
       ...props,
@@ -39,6 +48,12 @@ export class UsersService {
   async update(id: string, props: UserDto): Promise<UserEntity> {
     const foundUser = await this.usersRepository.findOne(id);
     if (!foundUser) throw new NotFoundException();
+
+    const foundUserLogin = await this.usersRepository.findOne({
+      login: props.login,
+    });
+    if (foundUserLogin && foundUserLogin.login !== foundUser.login)
+      throw new ConflictException();
 
     const password = await bcrypt.hash(props.password, 10);
 

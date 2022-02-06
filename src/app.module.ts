@@ -10,6 +10,7 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 
 import { UsersModule } from './users/users.module';
 import { BoardsModule } from './boards/boards.module';
+import { ColumnsModule } from './columns/columns.module';
 import { TasksModule } from './tasks/tasks.module';
 import { AuthModule } from './auth/auth.module';
 import { FileModule } from './file/file.module';
@@ -41,6 +42,7 @@ import { FileModule } from './file/file.module';
     }),
     UsersModule,
     BoardsModule,
+    ColumnsModule,
     TasksModule,
     AuthModule,
     FileModule,
