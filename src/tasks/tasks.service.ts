@@ -1,24 +1,24 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Task } from './tasks.entity';
+import { TaskEntity } from './tasks.entity';
 import { TaskDto } from './tasks.dto';
 import { BoardsService } from '../boards/boards.service';
 
 @Injectable()
 export class TasksService {
   constructor(
-    @InjectRepository(Task)
-    private tasksRepository: Repository<Task>,
+    @InjectRepository(TaskEntity)
+    private tasksRepository: Repository<TaskEntity>,
     private boardService: BoardsService,
   ) {}
 
-  async findAll(boardId: string): Promise<Task[]> {
+  async findAll(boardId: string): Promise<TaskEntity[]> {
     const allTasks = await this.tasksRepository.find({ where: { boardId } });
     return allTasks;
   }
 
-  async findOne(boardId: string, taskId: string): Promise<Task> {
+  async findOne(boardId: string, taskId: string): Promise<TaskEntity> {
     const foundTask = await this.tasksRepository.findOne({
       id: taskId,
       boardId,
@@ -27,7 +27,7 @@ export class TasksService {
     return foundTask;
   }
 
-  async create(boardId: string, props: TaskDto): Promise<Task> {
+  async create(boardId: string, props: TaskDto): Promise<TaskEntity> {
     await this.boardService.findOne(boardId);
 
     const task = this.tasksRepository.create({ ...props, boardId });
@@ -36,7 +36,11 @@ export class TasksService {
     return newTask;
   }
 
-  async update(boardId: string, taskId: string, props: TaskDto): Promise<Task> {
+  async update(
+    boardId: string,
+    taskId: string,
+    props: TaskDto,
+  ): Promise<TaskEntity> {
     const foundTask = await this.tasksRepository.findOne({
       id: taskId,
       boardId,
@@ -50,7 +54,7 @@ export class TasksService {
     return updateTask;
   }
 
-  async remove(taskId: string): Promise<Task> {
+  async remove(taskId: string): Promise<TaskEntity> {
     const foundTask = await this.tasksRepository.findOne(taskId);
     if (!foundTask) throw new NotFoundException();
 

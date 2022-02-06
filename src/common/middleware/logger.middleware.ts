@@ -1,4 +1,11 @@
-import { Injectable, NestMiddleware, Inject } from '@nestjs/common';
+import {
+  Injectable,
+  NestMiddleware,
+  Inject,
+  Res,
+  Req,
+  Next,
+} from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 import { Logger } from 'winston';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
@@ -9,15 +16,15 @@ export class LoggerMiddleware implements NestMiddleware {
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
   ) {}
 
-  use(req: Request, res: Response, next: NextFunction) {
+  use(@Req() req: Request, @Res() res: Response, @Next() next: NextFunction) {
     res.on('finish', () => {
       const { method, originalUrl, query, body } = req;
       const { statusCode, statusMessage } = res;
 
       const queryString =
-        Object.keys(query).length > 0 ? JSON.stringify(query) : '';
+        query && Object.keys(query).length > 0 ? JSON.stringify(query) : '';
       const bodyString =
-        Object.keys(body).length > 0 ? JSON.stringify(body) : '';
+        body && Object.keys(body).length > 0 ? JSON.stringify(body) : '';
 
       const message = `${method} ${originalUrl} ${statusCode} ${statusMessage} ${queryString} ${bodyString}`;
 

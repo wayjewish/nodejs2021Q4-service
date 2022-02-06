@@ -5,11 +5,11 @@ import {
   BaseEntity,
   ManyToOne,
 } from 'typeorm';
-import { Board } from '../boards/boards.entity';
-import { User } from '../users/users.entity';
+import { BoardEntity } from '../boards/boards.entity';
+import { UserEntity } from '../users/users.entity';
 
 @Entity()
-export class Task extends BaseEntity {
+export class TaskEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
@@ -37,9 +37,9 @@ export class Task extends BaseEntity {
   })
   columnId!: string | null;
 
-  @ManyToOne(() => Board, (board) => board.id, { onDelete: 'CASCADE' })
-  board!: Board;
+  @ManyToOne(() => BoardEntity, (board) => board.id, { onDelete: 'CASCADE' })
+  board!: BoardEntity;
 
-  @ManyToOne(() => User, (user) => user.id, { onDelete: 'SET NULL' })
-  user!: User;
+  @ManyToOne(() => UserEntity, (user) => user.id, { onDelete: 'SET NULL' })
+  user!: UserEntity;
 }
