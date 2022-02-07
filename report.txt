@@ -1,106 +1,5 @@
-# RS School REST service
+express
 
-## Endpoints
-
-- `User` (with attributes):
-  ```javascript
-  { id, name, login, password }
-  ```
-- `Board` (set of `columns`):
-  ```javascript
-  { id, title, columns }
-  ```
-- `Column` (set of tasks):
-  ```javascript
-   { id, title, order }
-  ```
-- `Task`:
-  ```javascript
-  {
-    id,
-    title,
-    order,
-    description,
-    userId, //assignee
-    boardId,
-    columnId
-  }
-  ```
-- `Login`:
-  ```javascript
-  {
-    login,
-    password
-  }
-  ```
-- `File`:
-  ```javascript
-  {
-    file, //multipart/form-data
-  }
-  ```
-
-## Prerequisites
-
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
-
-## Downloading
-
-```
-git clone {repository URL}
-```
-
-## Docker
-
-```
-docker-compose up
-```
-
-## Installing NPM modules
-
-```
-npm install
-```
-
-## Running application
-
-```
-npm start
-```
-
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
-
-## Testing
-
-After application running open new terminal and enter:
-
-To run all tests without authorization
-
-```
-npm test
-```
-
-To run all test with authorization
-
-```
-npm run test:auth
-```
-## Development
-
-If you're using VSCode, you can get a better developer experience from integration with [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions.
-
-### Auto-fix and format
-
-```
-npm run lint
-```
-
-## Load tests
-### Express
-```
 All VUs finished. Total time: 11 seconds
 
 --------------------------------
@@ -127,10 +26,10 @@ vusers.session_length:
   median: ...................................................................... 223.7
   p95: ......................................................................... 340.4
   p99: ......................................................................... 391.6
-```
 
-### Fastify
-```
+
+fastify
+
 All VUs finished. Total time: 11 seconds
 
 --------------------------------
@@ -157,6 +56,4 @@ vusers.session_length:
   median: ...................................................................... 223.7
   p95: ......................................................................... 441.5
   p99: ......................................................................... 487.9
-```
-
 
